@@ -1,0 +1,131 @@
+h1{
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: 50px;
+    margin: 0;
+    font-size: 1.6em;
+    color: #FFFFFF;
+}
+
+.box-menu{
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    margin: 0;
+    font-size: 1.8em;
+    color: #FFFFFF;
+}
+
+
+/*
+ * Estrutura Principal
+*/
+.container-principal{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+}
+
+.box-central{
+    height: 80%;
+    clear:both;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+/*
+ * Formulário Principal
+*/
+.campo-texto{
+    max-width: 8em;
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0.3em 0.8em;
+    background-color: #FFFFFF;
+    border: 1px solid #3f70af;
+    text-align: right;
+    font-size: 1.8em;
+    color: #444444;
+}
+
+.botao-principal{
+    max-width: 17.3em;
+    width: 100%;
+    margin: 1em 0;
+    border: 0px;
+    border-radius: 4px;
+    padding: 0.7em 2em;
+    background-color: #ffb500;
+    font-size: 1em;
+    color: #241a00;
+}
+
+/*
+ * Área do resultado simplificado
+*/
+.box-resultado-simples{
+    display: inline-block;
+    width: 18em;
+    margin: 2em 0;
+    color: #FFFFFF;
+}
+.box-resultado-simples__salario-liq{
+    display: block;
+    float: right;
+    font-size: 1.4em;
+}
+.box-botao-detalhes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.botao-detalhes{
+    margin: 1em 0;
+    border: 0px;
+    border-radius: 4px;
+    padding: 0.7em 2em;
+    background-color: #ffffff;
+    font-size: 1em;
+    color: #000000;
+}
+
+/*
+ * Box do Resultado Detalhado
+*/
+.box-resultado-detalhado{
+    background-color: #FFFFFF;
+    min-width: 10em;
+    width: 30em;
+    padding: 0.5em;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #444444;
+}
+.titulo-detalhes{
+    margin: 0.5em;
+    font-size: 1.2em;
+}
+.tabela-detalhes{
+    margin: 0.5em;
+    width: 97%;
+}
+.tabela-detalhes__imposto{
+    text-align: right;
+    color: #bf360c;
+}
+.tabela-detalhes__sal-liquido{
+    font-weight: bold;
+    text-align: right;
+}
+
+

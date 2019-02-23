@@ -1,20 +1,63 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container-principal">
+  <h1>LiqCalc</h1>
+
+  <div class="box-menu">
+    <!-- usando font awesome -->
+    <i class="fas fa-th-list"></i>
+  </div>
+
+  <div class="box-central">
+    
+    <div class="box-formulario">
+      <form action="#">
+        <input type="text" class="campo-texto" name="salarioBruto" [(ngModel)]="entrada.salarioBruto" >
+        <br>
+        <button class="botao-principal" (click)="tratarAcaoCalcular()">Calcular</button>
+      </form>
+    </div>
+
+
+    <!-- Box Resultado -->
+    <div class="box-resultado-simples">
+      Salário Líq.
+      <div class="box-resultado-simples__salario-liq">{{saida.salarioLiquido | currency:'R$ '}}</div>
+      <div class="box-botao-detalhes">
+        <button class="botao-detalhes" (click)="trataAcaoDetalhes()">Mostrar Detalhes</button>
+      </div>
+    </div>
+    
+
+    <!-- Box Detalhes -->
+    <div class="box-resultado-detalhado" [style.display]="isDetalhesAtivo ? 'inline-block' : 'none'">
+      <h3 class="titulo-detalhes">
+        Detalhes
+      </h3>
+      <table class="tabela-detalhes">
+        <tr>
+          <td>Sal. Bruto:</td>
+          <td>&nbsp;</td>
+          <td style="text-align: right;">{{saida.salarioBruto | currency:'R$ '}}</td>
+        </tr>
+        <tr>
+          <td>INSS:</td>
+          <td>{{saida.aliquotaINSS}}%</td>
+          <td class="tabela-detalhes__imposto">- {{saida.valorINSS | currency:'R$ '}}</td>
+        </tr>
+        <tr [style.display]="saida.valorIR > 0? '': 'none'">
+          <td>IR:</td>
+          <td>{{saida.aliquotaIR}}%</td>
+          <td class="tabela-detalhes__imposto">- {{saida.valorIR | currency:'R$ '}}</td>
+        </tr>
+        <tr>
+          <td>Sal. Líquido:</td>
+          <td>&nbsp;</td>
+          <td class="tabela-detalhes__sal-liquido">{{saida.salarioLiquido | currency:'R$ '}}</td>
+        </tr>
+      </table>
+      
+    </div>
+
+  </div>
+  
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
