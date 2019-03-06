@@ -6,15 +6,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TabelasAliquotasComponent } from './tabelas-aliquotas/tabelas-aliquotas.component';
+import { CalculoComponent } from './calculo/calculo.component';
 
 const rotas: Routes = [
-  {path: 'tabela-aliquotas', component: TabelasAliquotasComponent }
+  {path: 'calculo', component: CalculoComponent},
+  {path: 'tabela-aliquotas', component: TabelasAliquotasComponent },
+  {path: '', redirectTo: '/calculo', pathMatch: 'full'},
+  {path: '**', component: CalculoComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabelasAliquotasComponent
+    TabelasAliquotasComponent,
+    CalculoComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,7 @@ const rotas: Routes = [
     FormsModule,
     RouterModule.forRoot(
       rotas,
-      {enableTracing: true}
+      {enableTracing: false}
     )
   ],
   providers: [],
