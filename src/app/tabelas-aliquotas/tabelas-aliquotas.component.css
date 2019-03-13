@@ -1,0 +1,70 @@
+
+h2{
+    margin-top: 30px;
+    font-size: 1.4em;
+    color: #FAFAFA;
+}
+
+h3{
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #FCFCFC;
+}
+
+.box-voltar{
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: 50px;
+    margin: 0;
+    font-size: 1.8em;
+    color: #FAFAFA;
+}
+
+
+/*
+ * Estrutura Principal
+*/
+.container-principal{
+    width: 100vw;
+}
+
+.box-titulo{
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.box-central{
+    max-width: 600px;
+    margin: auto;
+    margin-top:30px;
+}
+
+/*
+ *  Tabelas
+ */
+.tabela-aliquota{
+    width: 100%;
+    border: 0px solid black;
+    padding:0;
+}
+.tabela-aliquota td{
+    padding: 0.3em 0.5em;
+}
+.label-faixa{
+    width: 70%;
+    background-color: #cccccc;
+}
+.label-aliquota{
+    width: 30%;
+    background-color: #cccccc;
+    text-align: center;
+}
+.celula-faixa{
+    background-color: gainsboro;
+}
+.celula-aliquota{
+    background-color: lightskyblue;
+    text-align: center;
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TabelaAliquotaService }  from '../tabela-aliquota.service';
+
 @Component({
   selector: 'app-tabelas-aliquotas',
   templateUrl: './tabelas-aliquotas.component.html',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabelasAliquotasComponent implements OnInit {
 
-  constructor() { }
+  constructor(public aliquotaService: TabelaAliquotaService) { }
 
   ngOnInit() {
+  }
+
+  getAliquotasINSS(){
+    console.log(">> getAliquotasINSS()");
+    const aliquotas = this.aliquotaService.aliquotasINSS;
+    console.log(aliquotas);
+    return aliquotas;
+  }
+
+  getAliquotasIR(){
+    return this.aliquotaService.aliquotasIR;
   }
 
 }
