@@ -48,6 +48,7 @@ h3{
     width: 100%;
     border: 0px solid black;
     padding:0;
+    color: #444444;
 }
 .tabela-aliquota td{
     padding: 0.3em 0.5em;
@@ -61,10 +62,15 @@ h3{
     background-color: #cccccc;
     text-align: center;
 }
+.tabela-aliquota tbody tr:nth-child(even) td{
+    background-color: #eaeaea;
+}
+.tabela-aliquota tbody tr:nth-child(odd) td{
+    background-color: #ffffff;
+}
 .celula-faixa{
-    background-color: gainsboro;
+   
 }
 .celula-aliquota{
-    background-color: lightskyblue;
     text-align: center;
 }

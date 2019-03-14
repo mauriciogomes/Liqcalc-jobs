@@ -15,14 +15,13 @@ export class TabelasAliquotasComponent implements OnInit {
   }
 
   getAliquotasINSS(){
-    console.log(">> getAliquotasINSS()");
     const aliquotas = this.aliquotaService.aliquotasINSS;
-    console.log(aliquotas);
     return aliquotas;
   }
 
   getAliquotasIR(){
-    return this.aliquotaService.aliquotasIR;
+    const aliquotas = this.aliquotaService.aliquotasIR;
+    return aliquotas;
   }
 
 }

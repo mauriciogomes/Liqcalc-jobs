@@ -2,7 +2,7 @@
   
   <div class="box-voltar">
     <!-- usando font awesome  -->
-    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-arrow-left" routerLink="/calculo"></i>
   </div>
 
   <div class="box-titulo">
@@ -19,12 +19,16 @@
       <table class="tabela-aliquota">
         <thead>
           <td class="label-faixa">Faixa</td>
-          <td class="label-aliquota">Aliquota</td>
+          <td class="label-aliquota">Alíquota</td>
         </thead>
-        <tr *ngFor="let faixaAliquota of getAliquotasINSS()">
-          <td class="celula-faixa">{{ faixaAliquota.valorInicial + " - " + faixaAliquota.valorFinal}}</td>
-          <td class="celula-aliquota">{{ faixaAliquota.aliquota + "%"}}</td>
-        </tr>
+        <tbody>
+          <tr *ngFor="let faixaAliquota of getAliquotasINSS()">
+            <td class="celula-faixa">
+              {{ (faixaAliquota.valorInicial | currency:"R$ ") + " até " +
+              (faixaAliquota.valorFinal | currency:"R$ ") }}</td>
+            <td class="celula-aliquota">{{ faixaAliquota.aliquota + "%"}}</td>
+          </tr>
+        </tbody>
       </table>
 
       <h3>
@@ -34,8 +38,16 @@
       <table class="tabela-aliquota">
         <thead>
           <td class="label-faixa">Faixa</td>
-          <td class="label-aliquota">Aliquota</td>
+          <td class="label-aliquota">Alíquota</td>
         </thead>
+        <tbody>
+            <tr *ngFor="let faixaAliquota of getAliquotasIR()">
+              <td class="celula-faixa">
+                {{ (faixaAliquota.valorInicial | currency:"R$ ") + " até " +
+                (faixaAliquota.valorFinal | currency:"R$ ") }}</td>
+              <td class="celula-aliquota">{{ faixaAliquota.aliquota ? faixaAliquota.aliquota + "%" : "-"}}</td>
+            </tr>
+          </tbody>
       </table>
 
     </section>
