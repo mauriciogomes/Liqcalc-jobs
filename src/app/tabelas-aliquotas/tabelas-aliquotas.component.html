@@ -24,9 +24,9 @@
         <tbody>
           <tr *ngFor="let faixaAliquota of getAliquotasINSS()">
             <td class="celula-faixa">
-              {{ (faixaAliquota.valorInicial | currency:"R$ ") + " até " +
-              (faixaAliquota.valorFinal | currency:"R$ ") }}</td>
-            <td class="celula-aliquota">{{ faixaAliquota.aliquota + "%"}}</td>
+              {{ (faixaAliquota.valorInicial | moedaBr ) + " até " +
+              (faixaAliquota.valorFinal | moedaBr ) }}</td>
+            <td class="celula-aliquota">{{ ( faixaAliquota.aliquota | decimalBr ) + "%"}}</td>
           </tr>
         </tbody>
       </table>
@@ -43,9 +43,12 @@
         <tbody>
             <tr *ngFor="let faixaAliquota of getAliquotasIR()">
               <td class="celula-faixa">
-                {{ (faixaAliquota.valorInicial | currency:"R$ ") + " até " +
-                (faixaAliquota.valorFinal | currency:"R$ ") }}</td>
-              <td class="celula-aliquota">{{ faixaAliquota.aliquota ? faixaAliquota.aliquota + "%" : "-"}}</td>
+                {{ (faixaAliquota.valorInicial | moedaBr ) + " até " +
+                (faixaAliquota.valorFinal | moedaBr ) }}
+              </td>
+              <td class="celula-aliquota">
+                {{ faixaAliquota.aliquota ? ( faixaAliquota.aliquota | decimalBr ) + "%" : "-"}}
+              </td>
             </tr>
           </tbody>
       </table>

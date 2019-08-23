@@ -68,6 +68,11 @@ h1{
     color: #241a00;
 }
 
+.box-formulario__mensagem-erro{
+    font-size: 1em;
+    color: #FFFFFF;
+}
+
 /*
  * Área do resultado simplificado
 */
@@ -126,4 +131,10 @@ h1{
 .tabela-detalhes__sal-liquido{
     font-weight: bold;
     text-align: right;
+}
+
+.botao-desabilitado{
+    background-color: #ffd25f;
+    color: #6b5a2e;
+    cursor: not-allowed;
 }

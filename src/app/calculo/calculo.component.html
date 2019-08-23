@@ -10,18 +10,40 @@
   <div class="box-central">
     
     <div class="box-formulario">
-      <form action="#">
-        <input type="text" class="campo-texto" name="salarioBruto" [(ngModel)]="entrada.salarioBruto" >
+      <form #formCalculo="ngForm" action="#">
+        <input
+          type="text"
+          class="campo-texto"
+          name="salarioBruto"
+          [(ngModel)]="entrada.salarioBruto"
+          required
+          >
         <br>
-        <button class="botao-principal" (click)="tratarAcaoCalcular()">Calcular</button>
+
+        <div
+          *ngIf="formCalculo.form.invalid || mensagemErro"
+          class="box-formulario__mensagem-erro"
+          >
+          {{ mensagemErro || "É preciso informar o salário." }}
+        </div>
+        
+        <button
+          class="botao-principal"
+          (click)="tratarAcaoCalcular()"
+          [disabled]="formCalculo.form.invalid"
+          [class.botao-desabilitado]="formCalculo.form.invalid"
+        >
+          Calcular
+        </button>
       </form>
+      
     </div>
 
 
     <!-- Box Resultado -->
     <div class="box-resultado-simples">
       Salário Líq.
-      <div class="box-resultado-simples__salario-liq">{{saida.salarioLiquido | currency:'R$ '}}</div>
+      <div class="box-resultado-simples__salario-liq">{{saida.salarioLiquido | moedaBr }}</div>
       <div class="box-botao-detalhes">
         <button class="botao-detalhes" (click)="trataAcaoDetalhes()">Mostrar Detalhes</button>
       </div>
@@ -37,22 +59,22 @@
         <tr>
           <td>Sal. Bruto:</td>
           <td>&nbsp;</td>
-          <td style="text-align: right;">{{saida.salarioBruto | currency:'R$ '}}</td>
+          <td style="text-align: right;">{{saida.salarioBruto | moedaBr }}</td>
         </tr>
         <tr>
           <td>INSS:</td>
           <td>{{saida.aliquotaINSS}}%</td>
-          <td class="tabela-detalhes__imposto">- {{saida.valorINSS | currency:'R$ '}}</td>
+          <td class="tabela-detalhes__imposto">- {{saida.valorINSS | moedaBr }}</td>
         </tr>
         <tr [style.display]="saida.valorIR > 0? '': 'none'">
           <td>IR:</td>
           <td>{{saida.aliquotaIR}}%</td>
-          <td class="tabela-detalhes__imposto">- {{saida.valorIR | currency:'R$ '}}</td>
+          <td class="tabela-detalhes__imposto">- {{saida.valorIR | moedaBr }}</td>
         </tr>
         <tr>
           <td>Sal. Líquido:</td>
           <td>&nbsp;</td>
-          <td class="tabela-detalhes__sal-liquido">{{saida.salarioLiquido | currency:'R$ '}}</td>
+          <td class="tabela-detalhes__sal-liquido">{{saida.salarioLiquido | moedaBr }}</td>
         </tr>
       </table>
       

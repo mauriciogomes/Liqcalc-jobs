@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TabelasAliquotasComponent } from './tabelas-aliquotas/tabelas-aliquotas.component';
 import { CalculoComponent } from './calculo/calculo.component';
+import { MoedaBrPipe } from './pipes/moeda-br.pipe';
+import { DecimalBrPipe } from './pipes/decimal-br.pipe';
 
 const rotas: Routes = [
   {path: 'calculo', component: CalculoComponent},
@@ -19,7 +21,9 @@ const rotas: Routes = [
   declarations: [
     AppComponent,
     TabelasAliquotasComponent,
-    CalculoComponent
+    CalculoComponent,
+    MoedaBrPipe,
+    DecimalBrPipe
   ],
   imports: [
     BrowserModule,
