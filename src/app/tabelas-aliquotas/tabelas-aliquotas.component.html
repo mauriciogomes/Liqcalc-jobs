@@ -38,14 +38,24 @@
       <table class="tabela-aliquota">
         <thead>
           <td class="label-faixa">Faixa</td>
+
           <td class="label-aliquota">Alíquota</td>
         </thead>
+
         <tbody>
             <tr *ngFor="let faixaAliquota of getAliquotasIR()">
               <td class="celula-faixa">
-                {{ (faixaAliquota.valorInicial | moedaBr ) + " até " +
-                (faixaAliquota.valorFinal | moedaBr ) }}
+                <ng-container *ngIf="faixaAliquota.valorFinal > 0">
+                  {{ (faixaAliquota.valorInicial | moedaBr ) +
+                      " até " +
+                      (faixaAliquota.valorFinal | moedaBr ) }}
+                </ng-container>
+
+                <ng-container *ngIf="faixaAliquota.valorFinal <= 0">
+                  {{ "À partir de " + (faixaAliquota.valorInicial | moedaBr) }}
+                </ng-container>
               </td>
+
               <td class="celula-aliquota">
                 {{ faixaAliquota.aliquota ? ( faixaAliquota.aliquota | decimalBr ) + "%" : "-"}}
               </td>
