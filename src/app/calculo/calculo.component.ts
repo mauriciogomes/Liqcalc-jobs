@@ -12,13 +12,14 @@ export class CalculoComponent implements OnInit {
 
 	entrada = {salarioBruto: '0'};
 
-	saida = { salarioLiquido: 0,
-						salarioBruto: 0,
-						aliquotaINSS: 0,
-						aliquotaIR: 0,
-						valorINSS: 0,
-						valorIR: 0
-					};
+	saida = {
+		salarioLiquido: 0,
+		salarioBruto: 0,
+		aliquotaINSS: 0,
+		aliquotaIR: 0,
+		valorINSS: 0,
+		valorIR: 0
+	};
 
 	isDetalhesAtivo = false;
 
@@ -26,12 +27,13 @@ export class CalculoComponent implements OnInit {
 
 	@ViewChild('msgErro') boxErro;
 
-	constructor(public aliquotasService: TabelaAliquotaService, public calculadora: CalculadoraService){
+	constructor(
+		public aliquotasService: TabelaAliquotaService,
+		public calculadora: CalculadoraService
+	){}
 
-	}
-
-  	ngOnInit(){
-    	if (!this.aliquotasService.aliquotasINSS || !this.aliquotasService.aliquotasIR) {
+	ngOnInit(){
+		if (!this.aliquotasService.aliquotasINSS || !this.aliquotasService.aliquotasIR) {
 			this.aliquotasService.carregaTabelas().then(
 				(hasSucess) => {
 					if (hasSucess) {
@@ -46,7 +48,6 @@ export class CalculoComponent implements OnInit {
 	}
 	
 	tratarAcaoCalcular(){
-		console.log("trata")
 		const salario = Number.parseInt(this.entrada.salarioBruto)
 		if(Number.isNaN(salario)){
 			this.mensagemErro = "O salário deve ser numérico";

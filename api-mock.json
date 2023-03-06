@@ -1,0 +1,27 @@
+{
+  "ir_table": [
+    { 
+      "2023": [
+        {"valorInicial": 0, "valorFinal": 1903.98, "aliquota": 0, "deduzir": 0},
+        {"valorInicial": 1903.99, "valorFinal": 2826.65, "aliquota": 7.5, "deduzir": 142.80},
+        {"valorInicial": 2826.66, "valorFinal": 3751.05, "aliquota": 15, "deduzir": 354.80},
+        {"valorInicial": 3751.06, "valorFinal": 4664.68, "aliquota": 22.5, "deduzir": 636.13},
+        {"valorInicial": 4664.69, "valorFinal": -1, "aliquota": 27.5, "deduzir": 869.36}
+      ]
+    }
+  ],
+  "inss_table": [
+    {
+      "2023": [
+        {"valorInicial": 0, "valorFinal": 1302.00, "aliquotaAplicada": 7.5},
+        {"valorInicial": 1302.01, "valorFinal": 2571.29, "aliquotaAplicada": 9},
+        {"valorInicial": 2571.30, "valorFinal": 3856.94, "aliquotaAplicada": 12},
+        {"valorInicial": 3856.95, "valorFinal": 7507.49, "aliquotaAplicada": 14},
+        {"valorInicial": 7507.50, "valorFinal": 12856.50, "aliquotaAplicada": 14.5, "federal": true},
+        {"valorInicial": 12856.51, "valorFinal": 25712.99, "aliquotaAplicada": 16.5, "federal": true},
+        {"valorInicial": 25713.00, "valorFinal": 50140.33, "aliquotaAplicada": 19, "federal": true},
+        {"valorInicial": 50140.34, "valorFinal": -1, "aliquotaAplicada": 22, "federal": true}
+      ]
+    }
+  ]
+}

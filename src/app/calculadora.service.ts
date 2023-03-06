@@ -9,6 +9,9 @@ export class CalculadoraService {
 
   constructor(public tabelaAliquota: TabelaAliquotaService) { }
 
+	//todo aplicar regras novas
+	// https://ingracio.adv.br/contribuicoes-inss/
+	
   /**
 	 * Retorna um objeto com cinco atributos: salarioLiquido, valorINSS, valorIR,
 	 * aliquotaINSS e aliquotaIR

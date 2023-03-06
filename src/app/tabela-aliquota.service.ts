@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,8 +11,8 @@ export class TabelaAliquotaService {
   public aliquotasINSS: Array<any>;
 	public aliquotasIR: Array<Object>;
 
-  private _urlTabelaINSS: string = 'https://api.jsonbin.io/b/5c60c4c91198012fc893801a';
-  private _urlTabelaIR: string = 'https://api.jsonbin.io/b/5c60c595a83a2931772e71a2';
+	private _urlTabelaINSS: string = environment.apiUrl + '/inss_table';
+  private _urlTabelaIR: string = environment.apiUrl + '/ir_table';
 
 	constructor(public http: HttpClient) {
 	}
@@ -61,9 +63,11 @@ export class TabelaAliquotaService {
 	 * Requisita a tabela de alíquotas e a torna acessível à aplicação
 	 */
 	private carregaTabelaINSS(): Promise<boolean>{
+		console.log('url ', this._urlTabelaINSS)
 		return new Promise((resolve, reject)=>{
 			this.http.get(this._urlTabelaINSS)
 			.subscribe( (response: Response) => {
+					console.log('response '+ response)
 					this.aliquotasINSS = this.extraiDadosVigentes(response);
 					resolve(true);
 				},
