@@ -48,7 +48,8 @@ export class CalculoComponent implements OnInit {
 	}
 	
 	tratarAcaoCalcular(){
-		const salario = Number.parseInt(this.entrada.salarioBruto)
+		const salario = Number.parseFloat(this.entrada.salarioBruto);
+
 		if(Number.isNaN(salario)){
 			this.mensagemErro = "O salário deve ser numérico";
 			return;

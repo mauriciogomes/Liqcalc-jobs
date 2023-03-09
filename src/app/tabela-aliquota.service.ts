@@ -62,12 +62,10 @@ export class TabelaAliquotaService {
 	/**
 	 * Requisita a tabela de alíquotas e a torna acessível à aplicação
 	 */
-	private carregaTabelaINSS(): Promise<boolean>{
-		console.log('url ', this._urlTabelaINSS)
+	private carregaTabelaINSS(): Promise<boolean> {
 		return new Promise((resolve, reject)=>{
 			this.http.get(this._urlTabelaINSS)
 			.subscribe( (response: Response) => {
-					console.log('response '+ response)
 					this.aliquotasINSS = this.extraiDadosVigentes(response);
 					resolve(true);
 				},
@@ -108,10 +106,13 @@ export class TabelaAliquotaService {
 			aliquotasVigentes = aliquotas[ano];
 			ano--;
 		}while(!aliquotasVigentes);
+
+		console.log('[tabela-aliquota.service] extrai ', aliquotasVigentes)
 		
 		return aliquotasVigentes;
 	}
 
+	/** @deprecated */
 	public selecionarAliquotaINSS(salarioBruto){
 		const aliquota = {'INSS': 0};
 
@@ -135,6 +136,40 @@ export class TabelaAliquotaService {
 		}
 
 		return aliquota;
+	}
+
+	public selecionarAliquotasINSS(salarioBruto): any[] {
+		const aliquotas = [];
+
+		// Garantir que as aliquotas já foram carregadas
+		if(!Array.isArray(this.aliquotasINSS) || this.aliquotasINSS.length == 0){
+			throw new Error("Aliquotas de INSS não foram carregadas.");
+		}
+
+		this.aliquotasINSS.forEach((faixaAliquota) => {
+			if(salarioBruto >= faixaAliquota.valorInicial) {
+				aliquotas.push(faixaAliquota);
+			} else {
+				return;
+			}
+			console.log('passou por inss ', faixaAliquota);
+		})
+
+		// for(let ind=0; ind < this.aliquotasINSS.length; ind++){
+		// 	const faixa = this.aliquotasINSS[ind];
+
+		// 	if(salarioBruto >= faixa.valorInicial && salarioBruto <= faixa.valorFinal){
+		// 		aliquota['INSS'] = faixa.aliquota;
+		// 		break;
+		// 	}else if( ind === this.aliquotasINSS.length - 1 ){
+		// 		// foi necessário saber se é a ultima faixa de valores já que o valor final (teto)
+		// 		// não indica que o salário não cai na regra
+		// 		aliquota['INSS'] = faixa.aliquota;
+		// 		aliquota['tetoINSS'] = faixa.valorFinal;
+		// 	}
+		// }
+
+		return aliquotas;
 	}
 
 	// As aliquotas precisam ser carregadas separadas porque só há
