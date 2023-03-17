@@ -18,11 +18,9 @@ export class CalculadoraService {
 	 * @param salarioBruto 
 	 */
 	public efetuarCalculo(salarioBruto: number): any {
-		
 		let faixasAliquotas;
 
 		try{
-			// objAliquota = this.tabelaAliquota.selecionarAliquotaINSS(salarioBruto);
 			faixasAliquotas = this.tabelaAliquota.selecionarAliquotasINSS(salarioBruto);
 		}catch(erro){
 			const msgErro = `Falha ao efetuar cálculo: ${erro.message}`;
@@ -30,14 +28,10 @@ export class CalculadoraService {
 			throw new Error(msgErro);
 		}
 
-		//let valorINSS = this.calcularValorINSSAntigo(salarioBruto, objAliquota);
 		let valorINSS = this.calcularValorINSS(salarioBruto, faixasAliquotas);
-
-		//todo calcularAliquotaEfetiva
-		let aliquotaINSSEfetiva = 0;
-		
-
-		const salarioBaseParaIR = salarioBruto - valorINSS;
+		const valorINSSdecimal2 = Number.parseFloat(valorINSS.toFixed(2));
+		let aliquotaINSSEfetiva = Number.parseFloat((valorINSSdecimal2 * 100 / salarioBruto).toFixed(2));
+		const salarioBaseParaIR = salarioBruto - valorINSSdecimal2;
 		
 		let objAliquota;
 		try{
@@ -53,9 +47,7 @@ export class CalculadoraService {
 
 		const salarioLiquido = salarioBaseParaIR - valorIR;
 
-		//return {salarioLiquido, valorINSS, valorIR, aliquotaINSS, aliquotaIR};
 		return {salarioLiquido, valorINSS, valorIR, aliquotaINSSEfetiva, aliquotaIR};
-		
 	}
 
 	calcularValorINSSAntigo(salarioBruto: number, objAliquota: any): number {
@@ -95,14 +87,14 @@ export class CalculadoraService {
 	}
 
 	/**
-	 * Ajuste para melhorar precisao da subtracao
+	 * Ajuste para melhorar precisao da divisão
 	 */
 	dividirDecimal(denominador: number, divisor: number): number {
 		return Number.parseFloat((denominador / divisor).toFixed(2));
 	}
 
 	/**
-	 * Ajuste para melhorar precisao da subtracao
+	 * Ajuste para melhorar precisao da multiplicação
 	 */
 	multiplicarDecimal(fatorA: number, fatorB: number): number {
 		return Number.parseFloat((fatorA * fatorB).toFixed(2));
