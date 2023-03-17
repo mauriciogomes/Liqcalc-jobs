@@ -152,7 +152,6 @@ export class TabelaAliquotaService {
 			} else {
 				return;
 			}
-			console.log('passou por inss ', faixaAliquota);
 		})
 
 		// for(let ind=0; ind < this.aliquotasINSS.length; ind++){

@@ -61,7 +61,7 @@ export class CalculoComponent implements OnInit {
 			this.saida.salarioBruto = salario;
 			this.saida.salarioLiquido = resultado.salarioLiquido;
 			this.saida.valorINSS = resultado.valorINSS;
-			this.saida.aliquotaINSS = resultado.aliquotaINSS;
+			this.saida.aliquotaINSS = resultado.aliquotaINSSEfetiva;
 			this.saida.valorIR = resultado.valorIR;
 			this.saida.aliquotaIR = resultado.aliquotaIR;
 		}else{
