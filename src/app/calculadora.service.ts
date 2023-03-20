@@ -17,11 +17,11 @@ export class CalculadoraService {
 	 * aliquotaINSS e aliquotaIR
 	 * @param salarioBruto 
 	 */
-	public efetuarCalculo(salarioBruto: number): any {
+	public efetuarCalculo(salarioBruto: number, isServidorFederal?: boolean): any {
 		let faixasAliquotas;
 
 		try{
-			faixasAliquotas = this.tabelaAliquota.selecionarAliquotasINSS(salarioBruto);
+			faixasAliquotas = this.tabelaAliquota.selecionarAliquotasINSS(salarioBruto, isServidorFederal);
 		}catch(erro){
 			const msgErro = `Falha ao efetuar cálculo: ${erro.message}`;
 			console.error(msgErro);

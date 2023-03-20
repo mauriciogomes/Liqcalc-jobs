@@ -138,7 +138,7 @@ export class TabelaAliquotaService {
 		return aliquota;
 	}
 
-	public selecionarAliquotasINSS(salarioBruto): any[] {
+	public selecionarAliquotasINSS(salarioBruto: number, isServidorFederal?: boolean): any[] {
 		const aliquotas = [];
 
 		// Garantir que as aliquotas já foram carregadas
@@ -147,6 +147,10 @@ export class TabelaAliquotaService {
 		}
 
 		this.aliquotasINSS.forEach((faixaAliquota) => {
+			if(faixaAliquota.federal && !isServidorFederal) {
+				return;
+			}
+
 			if(salarioBruto >= faixaAliquota.valorInicial) {
 				aliquotas.push(faixaAliquota);
 			} else {

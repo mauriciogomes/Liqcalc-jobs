@@ -8,7 +8,6 @@ Contato: `maur.gomes@gmail.com`
 
 ## TODOs
 
-- Usar o JSON server e ajustar chamadas
 - Criar tela com a tabela de alíquotas
 - Não permitir inputs não numéricos ou vírgula (que deve ser tratado no formato brasileiro)
 - O resultado simples só deve aparecer depois do primeiro cálculo
@@ -16,8 +15,8 @@ Contato: `maur.gomes@gmail.com`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Rode o `ng serve` para o servidor da aplicação e também `npm run json-start` para o servidor de json que simula a api.
 
-## Running unit tests
+Abra o endereço `http://localhost:4200/` para abrir na aplicação.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
