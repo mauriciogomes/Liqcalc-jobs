@@ -8,14 +8,12 @@ import { TabelaAliquotaService } from './tabela-aliquota.service';
 export class CalculadoraService {
 
   constructor(public tabelaAliquota: TabelaAliquotaService) { }
-
-	//todo aplicar regras novas
-	// https://ingracio.adv.br/contribuicoes-inss/
 	
   /**
 	 * Retorna um objeto com cinco atributos: salarioLiquido, valorINSS, valorIR,
 	 * aliquotaINSS e aliquotaIR
-	 * @param salarioBruto 
+	 * @param salarioBruto
+	 * @param isServidorFederal determina se o cálculo é com base na tabela dos servidores federais (RPPS)
 	 */
 	public efetuarCalculo(salarioBruto: number, isServidorFederal?: boolean): any {
 		let faixasAliquotas;
@@ -28,9 +26,18 @@ export class CalculadoraService {
 			throw new Error(msgErro);
 		}
 
-		let valorINSS = this.calcularValorINSS(salarioBruto, faixasAliquotas);
+		let valorINSS = this.calcularValorINSS(salarioBruto, faixasAliquotas, isServidorFederal);
 		const valorINSSdecimal2 = Number.parseFloat(valorINSS.toFixed(2));
-		let aliquotaINSSEfetiva = Number.parseFloat((valorINSSdecimal2 * 100 / salarioBruto).toFixed(2));
+
+		let aliquotaINSSEfetiva;
+		const ultimaFaixa = faixasAliquotas[faixasAliquotas.length - 1];
+
+		if( this.isTetoContibuicao(salarioBruto, ultimaFaixa, isServidorFederal) ) {
+			aliquotaINSSEfetiva = Number.parseFloat((valorINSSdecimal2 * 100 / ultimaFaixa.valorFinal).toFixed(2));
+		} else {
+			aliquotaINSSEfetiva = Number.parseFloat((valorINSSdecimal2 * 100 / salarioBruto).toFixed(2));
+		}
+
 		const salarioBaseParaIR = salarioBruto - valorINSSdecimal2;
 		
 		let objAliquota;
@@ -62,7 +69,7 @@ export class CalculadoraService {
 		return valorINSS;
 	}
 
-	calcularValorINSS(salarioBruto: number, faixasAliquotas: any[]): number {
+	calcularValorINSS(salarioBruto: number, faixasAliquotas: any[], isServidorFederal?: boolean ): number {
 		const ultimaFaixa = faixasAliquotas[faixasAliquotas.length - 1];
 		let montante = 0;
 		let denominador: number;
@@ -72,10 +79,26 @@ export class CalculadoraService {
 			montante += (faixasAliquotas[i].aliquotaAplicada / 100 * denominador);
 		}
 
-		denominador = (salarioBruto - ultimaFaixa.valorInicial);
+		if( this.isTetoContibuicao(salarioBruto, ultimaFaixa, isServidorFederal) ) {
+			denominador = (ultimaFaixa.valorFinal - ultimaFaixa.valorInicial);
+		} else {
+			denominador = (salarioBruto - ultimaFaixa.valorInicial);
+		}
 		montante += (ultimaFaixa.aliquotaAplicada / 100 * denominador);
 
 		return montante;
+	}
+
+	isTetoContibuicao(salarioBruto: number, ultimaFaixa: any, isServidorFederal = false): boolean {
+		if(isServidorFederal) {
+			return false;
+		}
+
+		if(salarioBruto <= ultimaFaixa.valorFinal) {
+			return false;
+		}
+
+		return true;
 	}
 
 
