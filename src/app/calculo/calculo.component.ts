@@ -10,7 +10,7 @@ import { CalculadoraService }	 from '../calculadora.service';
 })
 export class CalculoComponent implements OnInit {
 
-	entrada = {salarioBruto: '0'};
+	entrada = {salarioBruto: '0', isServidorFederal: false};
 
 	saida = {
 		salarioLiquido: 0,
@@ -49,6 +49,7 @@ export class CalculoComponent implements OnInit {
 	
 	tratarAcaoCalcular(){
 		const salario = Number.parseFloat(this.entrada.salarioBruto);
+		const isServidorFederal = this.entrada.isServidorFederal;
 
 		if(Number.isNaN(salario)){
 			this.mensagemErro = "O salário deve ser numérico";
@@ -56,7 +57,7 @@ export class CalculoComponent implements OnInit {
 		}
 
 		if(salario > 0){
-			let resultado = this.calculadora.efetuarCalculo(salario);
+			let resultado = this.calculadora.efetuarCalculo(salario, isServidorFederal);
 
 			this.saida.salarioBruto = salario;
 			this.saida.salarioLiquido = resultado.salarioLiquido;

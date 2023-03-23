@@ -26,6 +26,14 @@
           >
           {{ mensagemErro || "É preciso informar o salário." }}
         </div>
+
+        <label for="inServidorFederal">É servidor público federal (RPPS)</label>
+        <input
+          id="inServidorFederal"
+          type="checkbox"
+          name="servidorFederal"
+          [(ngModel)]="entrada.isServidorFederal"
+        >
         
         <button
           class="botao-principal"
