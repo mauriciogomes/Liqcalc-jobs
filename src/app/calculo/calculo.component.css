@@ -68,9 +68,20 @@ h1{
     color: #241a00;
 }
 
+.box-formulario {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box-formulario label {
+    color: #FFFFFF;
+}
+
 .box-formulario__mensagem-erro{
     font-size: 1em;
-    color: #FFFFFF;
+    color: rgb(255, 153, 0);
+    margin-bottom: 14px;
 }
 
 /*
