@@ -11,29 +11,41 @@
     
     <div class="box-formulario">
       <form #formCalculo="ngForm" action="#">
-        <input
-          type="text"
-          class="campo-texto"
-          name="salarioBruto"
-          [(ngModel)]="entrada.salarioBruto"
-          required
+        <div>
+          <input
+            type="text"
+            class="campo-texto"
+            name="salarioBruto"
+            [class.tem-erro]="salarioBruto.invalid || mensagemErro"
+            [(ngModel)]="entrada.salarioBruto"
+            placeholder="0.00"
+            #salarioBruto="ngModel"
+            required
+            autocomplete="off"
+            inputmode="numeric"
+            digitOnly
+            decimal="true"
+            (ngModelChange)="trataMudancaSalario()"
           >
-        <br>
-
-        <div
-          *ngIf="formCalculo.form.invalid || mensagemErro"
-          class="box-formulario__mensagem-erro"
-          >
-          {{ mensagemErro || "É preciso informar o salário." }}
         </div>
 
-        <label for="inServidorFederal">É servidor público federal (RPPS)</label>
-        <input
-          id="inServidorFederal"
-          type="checkbox"
-          name="servidorFederal"
-          [(ngModel)]="entrada.isServidorFederal"
+        <div
+          *ngIf="!salarioBruto.valid || mensagemErro"
+          class="box-formulario__mensagem-erro"
         >
+          <div *ngIf="salarioBruto.invalid && salarioBruto.errors.required">É preciso informar o salário.</div>
+          <div *ngIf="salarioBruto.valid && mensagemErro">{{ mensagemErro }}</div>
+        </div>
+
+        <div>
+          <label for="inServidorFederal">É servidor público federal (RPPS)</label>
+          <input
+            id="inServidorFederal"
+            type="checkbox"
+            name="servidorFederal"
+            [(ngModel)]="entrada.isServidorFederal"
+          >
+        </div>
         
         <button
           class="botao-principal"

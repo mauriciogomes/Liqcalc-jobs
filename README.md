@@ -19,4 +19,8 @@ Rode o `ng serve` para o servidor da aplicação e também `npm run json-start` 
 
 Abra o endereço `http://localhost:4200/` para abrir na aplicação.
 
+## Plugins utilizados
+
+- @uiowa/digit-only - https://www.npmjs.com/package/@uiowa/digit-only/v/1.1.1
+
 
