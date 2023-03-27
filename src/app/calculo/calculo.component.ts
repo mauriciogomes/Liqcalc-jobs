@@ -77,6 +77,10 @@ export class CalculoComponent implements OnInit {
 		this.isDetalhesAtivo = !this.isDetalhesAtivo;
 	}
 
+	trataMudancaSalario() {
+		this.mensagemErro = null;
+	}
+
 	/* exibeMensagem(){
 		this.boxErro.class = "visivel";
 	} */

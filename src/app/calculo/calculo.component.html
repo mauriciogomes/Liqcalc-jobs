@@ -16,16 +16,25 @@
             type="text"
             class="campo-texto"
             name="salarioBruto"
+            [class.tem-erro]="salarioBruto.invalid || mensagemErro"
             [(ngModel)]="entrada.salarioBruto"
+            placeholder="0.00"
+            #salarioBruto="ngModel"
             required
-            >
+            autocomplete="off"
+            inputmode="numeric"
+            digitOnly
+            decimal="true"
+            (ngModelChange)="trataMudancaSalario()"
+          >
         </div>
 
         <div
-          *ngIf="formCalculo.form.invalid || mensagemErro"
+          *ngIf="!salarioBruto.valid || mensagemErro"
           class="box-formulario__mensagem-erro"
-          >
-          {{ mensagemErro || "É preciso informar o salário." }}
+        >
+          <div *ngIf="salarioBruto.invalid && salarioBruto.errors.required">É preciso informar o salário.</div>
+          <div *ngIf="salarioBruto.valid && mensagemErro">{{ mensagemErro }}</div>
         </div>
 
         <div>

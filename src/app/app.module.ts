@@ -10,6 +10,9 @@ import { CalculoComponent } from './calculo/calculo.component';
 import { MoedaBrPipe } from './pipes/moeda-br.pipe';
 import { DecimalBrPipe } from './pipes/decimal-br.pipe';
 
+// External Libs
+import { DigitOnlyModule } from '@uiowa/digit-only';
+
 const rotas: Routes = [
   {path: 'calculo', component: CalculoComponent},
   {path: 'tabela-aliquotas', component: TabelasAliquotasComponent },
@@ -32,7 +35,8 @@ const rotas: Routes = [
     RouterModule.forRoot(
       rotas,
       {enableTracing: false}
-    )
+    ),
+    DigitOnlyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
