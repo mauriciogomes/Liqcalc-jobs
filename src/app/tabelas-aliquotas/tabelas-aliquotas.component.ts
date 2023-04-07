@@ -21,7 +21,6 @@ export class TabelasAliquotasComponent implements OnInit {
 
   getAliquotasIR(){
     const aliquotas = this.aliquotaService.aliquotasIR;
-    console.log("aliquotas ", aliquotas);
     return aliquotas;
   }
 

@@ -13,7 +13,7 @@
     <section>
       
       <h3>
-        INSS
+        Previdência (INSS e RPPS)
       </h3>
       
       <table class="tabela-aliquota">
@@ -24,9 +24,18 @@
         <tbody>
           <tr *ngFor="let faixaAliquota of getAliquotasINSS()">
             <td class="celula-faixa">
-              {{ (faixaAliquota.valorInicial | moedaBr ) + " até " +
-              (faixaAliquota.valorFinal | moedaBr ) }}</td>
-            <td class="celula-aliquota">{{ ( faixaAliquota.aliquota | decimalBr ) + "%"}}</td>
+              <ng-container *ngIf="faixaAliquota.valorFinal > 0">
+                {{ (faixaAliquota.valorInicial | moedaBr ) + " até " +
+                (faixaAliquota.valorFinal | moedaBr ) }}
+              </ng-container>
+
+              <ng-container *ngIf="faixaAliquota.valorFinal <= 0">
+                {{ "À partir de " + (faixaAliquota.valorInicial | moedaBr) }}
+              </ng-container>
+
+              <ng-container *ngIf="faixaAliquota.federal">&nbsp;(RPPS)</ng-container>
+            </td>
+            <td class="celula-aliquota">{{ ( faixaAliquota.aliquotaAplicada | decimalBr ) + "%"}}</td>
           </tr>
         </tbody>
       </table>
