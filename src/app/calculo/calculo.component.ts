@@ -36,9 +36,6 @@ export class CalculoComponent implements OnInit {
 		if (!this.aliquotasService.aliquotasINSS || !this.aliquotasService.aliquotasIR) {
 			this.aliquotasService.carregaTabelas().then(
 				(hasSucess) => {
-					if (hasSucess) {
-						console.log("Carregou aliquotas: " + hasSucess);
-					}
 				},
 				(erro)=>{
 					console.error("carregarTabelas() : " + erro);

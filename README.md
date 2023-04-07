@@ -1,17 +1,17 @@
 # LiqcalcWeb
 
-Cálculo do salário líquido com base nas alíquotas previstas para o regime CLT.
+Cálculo do salário líquido com base nas alíquotas previstas no INSS e RPPS.
 
 Utilizando *Angular*, Typescript, HTML e CSS.
 
+Autor: Maurício J. Gomes
 Contato: `maur.gomes@gmail.com`
+Linkedin: `https://www.linkedin.com/in/mauriciojgomes/`
 
 ## TODOs
 
-- Criar tela com a tabela de alíquotas
-- Não permitir inputs não numéricos ou vírgula (que deve ser tratado no formato brasileiro)
-- O resultado simples só deve aparecer depois do primeiro cálculo
-- Utilizar o formato brasileiro para moeda
+- O resultado detalhado só deve aparecer depois do primeiro cálculo
+- Ajustes de layout
 
 ## Development server
 

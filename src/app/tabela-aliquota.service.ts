@@ -106,8 +106,6 @@ export class TabelaAliquotaService {
 			aliquotasVigentes = aliquotas[ano];
 			ano--;
 		}while(!aliquotasVigentes);
-
-		console.log('[tabela-aliquota.service] extrai ', aliquotasVigentes)
 		
 		return aliquotasVigentes;
 	}
