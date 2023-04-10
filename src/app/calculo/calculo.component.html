@@ -72,7 +72,10 @@
     
 
     <!-- Box Detalhes -->
-    <div class="box-resultado-detalhado" [style.display]="isDetalhesAtivo ? 'inline-block' : 'none'">
+    <div
+      class="box-resultado-detalhado"
+      [ngClass]="{'exibindo' : isDetalhesAtivo}"
+    >
       <h3 class="titulo-detalhes">
         Detalhes
       </h3>

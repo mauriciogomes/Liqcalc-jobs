@@ -127,6 +127,7 @@ h1{
  * Box do Resultado Detalhado
 */
 .box-resultado-detalhado{
+    display: inline-block;
     background-color: #FFFFFF;
     min-width: 10em;
     width: 30em;
@@ -135,6 +136,11 @@ h1{
     border-radius: 4px;
     font-size: 1em;
     color: #444444;
+    transition: 0.3s ease;
+    opacity: 0;
+}
+.box-resultado-detalhado.exibindo {
+    opacity: 1;
 }
 .titulo-detalhes{
     margin: 0.5em;
