@@ -16,6 +16,7 @@ h1{
     margin: 0;
     font-size: 1.8em;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 
@@ -72,7 +73,9 @@ h1{
     background-color: #ffb500;
     font-size: 1em;
     color: #241a00;
+    cursor: pointer;
 }
+
 
 .box-formulario {
     display: inline-flex;
@@ -151,7 +154,12 @@ h1{
 }
 
 .botao-desabilitado{
-    background-color: #ffd25f;
-    color: #6b5a2e;
+    background-color: #A6905A;
+    color: #606060;
     cursor: not-allowed;
+}
+
+/* utilitário */
+.pointer {
+    cursor: pointer;
 }

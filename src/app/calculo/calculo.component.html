@@ -38,11 +38,12 @@
         </div>
 
         <div>
-          <label for="inServidorFederal">É servidor público federal (RPPS)</label>
+          <label for="inServidorFederal" class="pointer">É servidor público federal (RPPS)</label>
           <input
             id="inServidorFederal"
             type="checkbox"
             name="servidorFederal"
+            class="pointer"
             [(ngModel)]="entrada.isServidorFederal"
           >
         </div>
@@ -65,7 +66,7 @@
       Salário Líq.
       <div class="box-resultado-simples__salario-liq">{{saida.salarioLiquido | moedaBr }}</div>
       <div class="box-botao-detalhes">
-        <button class="botao-detalhes" (click)="trataAcaoDetalhes()">Mostrar Detalhes</button>
+        <button class="botao-detalhes pointer" (click)="trataAcaoDetalhes()">Mostrar Detalhes</button>
       </div>
     </div>
     
