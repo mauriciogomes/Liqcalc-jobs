@@ -25,7 +25,7 @@ export class CalculoComponent implements OnInit {
 
 	mensagemErro: string = null;
 
-	@ViewChild('msgErro', { static: false }) boxErro;
+	@ViewChild('msgErro') boxErro;
 
 	constructor(
 		public aliquotasService: TabelaAliquotaService,
