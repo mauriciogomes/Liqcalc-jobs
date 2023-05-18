@@ -2,41 +2,38 @@ import { BrowserModule }        from '@angular/platform-browser';
 import { NgModule }             from '@angular/core';
 import { FormsModule }          from '@angular/forms';
 import { HttpClientModule }     from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TabelasAliquotasComponent } from './tabelas-aliquotas/tabelas-aliquotas.component';
-import { CalculoComponent } from './calculo/calculo.component';
-import { MoedaBrPipe } from './pipes/moeda-br.pipe';
-import { DecimalBrPipe } from './pipes/decimal-br.pipe';
+import { MoedaBrPipe } from './shared/pipes/moeda-br.pipe';
+import { DecimalBrPipe } from './shared/pipes/decimal-br.pipe';
 
 // External Libs
 import { DigitOnlyModule } from '@uiowa/digit-only';
 
-const rotas: Routes = [
-  {path: 'calculo', component: CalculoComponent},
-  {path: 'tabela-aliquotas', component: TabelasAliquotasComponent },
-  {path: '', redirectTo: '/calculo', pathMatch: 'full'},
-  {path: '**', component: CalculoComponent}
-];
+// Modules
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderModule } from './header/header.module';
+import { FooterModule } from './footer/footer.module';
+import { OpportunitiesSearchComponent } from './opportunities/feature/opportunities-search/opportunities-search.component';
+import { OpportunityDetailComponent } from './opportunities/feature/opportunity-detail/opportunity-detail.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabelasAliquotasComponent,
-    CalculoComponent,
-    MoedaBrPipe,
-    DecimalBrPipe
+    
+    // MoedaBrPipe,
+    // DecimalBrPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(
-      rotas,
-      {enableTracing: false}
-    ),
-    DigitOnlyModule
+    AppRoutingModule,
+    DigitOnlyModule,
+    HeaderModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

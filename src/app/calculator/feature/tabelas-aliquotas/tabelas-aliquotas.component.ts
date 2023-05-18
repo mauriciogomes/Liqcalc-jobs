@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TabelaAliquotaService }  from '../tabela-aliquota.service';
+import { TabelaAliquotaService }  from '../../../tabela-aliquota.service';
 
 @Component({
   selector: 'app-tabelas-aliquotas',

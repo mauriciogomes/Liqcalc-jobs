@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { TabelaAliquotaService } from '../tabela-aliquota.service';
-import { CalculadoraService }	 from '../calculadora.service';
+import { TabelaAliquotaService } from '../../../tabela-aliquota.service';
+import { CalculadoraService }	 from '../../../calculadora.service';
 
 @Component({
   selector: 'app-calculo',
