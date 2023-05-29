@@ -1,0 +1,18 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body{
+	margin: 0;
+	font-family: Roboto, 'Roboto', "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+	font-family: 'Basic Dev Social';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./../assets/fonts/basic-dev-social.woff'),
+		url('./../assets/fonts/basic-dev-social.ttf');
+}
