@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 const rotas: Routes = [
   {
-    path: 'start',
+    path: '',
     loadChildren: () =>
       import('./start-page/start-page.module').then(
         (m) => m.StartPageModule
@@ -24,9 +24,7 @@ const rotas: Routes = [
         (m) => m.CalculatorShellModule
       )
   },
-  
-  {path: '', redirectTo: '/calculator', pathMatch: 'full'},
-  {path: '**', redirectTo: '/calculator', pathMatch: 'full'}
+  {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({

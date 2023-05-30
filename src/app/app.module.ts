@@ -16,6 +16,7 @@ import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { OpportunitiesSearchComponent } from './opportunities/feature/opportunities-search/opportunities-search.component';
 import { OpportunityDetailComponent } from './opportunities/feature/opportunity-detail/opportunity-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -33,7 +34,8 @@ import { OpportunityDetailComponent } from './opportunities/feature/opportunity-
     AppRoutingModule,
     DigitOnlyModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
