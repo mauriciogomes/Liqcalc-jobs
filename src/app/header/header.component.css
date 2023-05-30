@@ -1,0 +1,50 @@
+/* Variables */
+
+
+/* Main styles - mobile */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2em 1.5em;
+  color: var(--dark-gray);
+  background-color: var(--white);
+}
+
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.logo {
+  max-height: 44px;
+}
+
+.site-title {
+  display: inline;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--dark-gray);
+}
+
+.menu-mobile {
+  display: block;
+}
+
+.menu-spread {
+  display: none;
+}
+
+
+/* Media queries */
+@media screen and (min-width: 768px) {
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-spread {
+    display: block;
+  }
+}

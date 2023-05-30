@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isMobileMenuOpen: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
+  handleClickMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 }

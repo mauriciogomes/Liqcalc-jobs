@@ -1,8 +1,31 @@
-<h1>Liqcalc Jobs</h1>
-<nav>
-  <ul>
-    <li>Sobre mim</li>
-    <li>Projetos</li>
-    <li>Tecnologias</li>
-  </ul>
-</nav>
+<div class="header">
+  <div class="header__left">
+    <img class="logo" src="./../../assets/logo-color.svg">
+    <h1 class="site-title">Liqcalc Jobs</h1>
+  </div>
+
+  <div class="menu-container">
+    <nav>
+      <div class="menu-mobile">
+        <span class="material-icons-outlined" (click)="handleClickMobileMenu()">menu</span>
+
+        <div class="menu-mobile__list" *ngIf="isMobileMenuOpen">
+          <ul>
+            <li>Sobre mim</li>
+            <li>Projetos</li>
+            <li>Tecnologias</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="menu-spread">
+        <ul>
+          <li>Sobre mim</li>
+          <li>Projetos</li>
+          <li>Tecnologias</li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
