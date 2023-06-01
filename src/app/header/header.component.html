@@ -1,19 +1,33 @@
 <div class="header">
   <div class="header__left">
-    <img class="logo" src="./../../assets/logo-color.svg">
+    <img
+      class="logo"
+      src="./../../assets/logo-color.svg"
+      (click)="handleClickLogo()"
+    >
     <h1 class="site-title">Liqcalc Jobs</h1>
   </div>
 
   <div class="menu-container">
     <nav>
       <div class="menu-mobile">
-        <span class="menu-mobile__icon material-icons-outlined" (click)="handleClickMobileMenu()">menu</span>
+        <span
+          class="menu-mobile__icon material-icons-outlined"
+          [class.menu-mobile__icon--hidden]="isMobileMenuOpen"
+          (click)="handleClickMobileMenu()"
+        >menu</span>
+
+        <span
+          class="menu-mobile__icon material-icons-outlined"
+          [class.menu-mobile__icon--hidden]="!isMobileMenuOpen"
+          (click)="closeMenu()"
+        >close</span>
 
         <div class="menu-mobile__content" *ngIf="isMobileMenuOpen">
           <ul class="menu-mobile__list">
-            <li class="menu-mobile__list__item">Sobre mim</li>
-            <li class="menu-mobile__list__item">Projetos</li>
-            <li class="menu-mobile__list__item">Tecnologias</li>
+            <li class="menu-mobile__list__item" (click)="handleMobileClickSearch()">Buscar vaga</li>
+            <li class="menu-mobile__list__item" (click)="handleMobileClickCreate()">Cadastrar vaga</li>
+            <li class="menu-mobile__list__item" (click)="handleMobileClickCalculator()">Calcular salário</li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,9 @@ export class HeaderComponent implements OnInit {
 
   isMobileMenuOpen: boolean = false;
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +20,41 @@ export class HeaderComponent implements OnInit {
   handleClickMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
+
+  closeMenu() {
+    this.isMobileMenuOpen = false;
+  }
+  
+  navigate(urlRoute: string) {
+    this.router.navigateByUrl(urlRoute);
+  }
+
+  handleMobileClickSearch() {
+    this.closeMenu();
+
+    const PATH_SEARCH = '/opportunities/search';
+    this.navigate(PATH_SEARCH);
+  }
+
+  handleMobileClickCreate() {
+    this.closeMenu();
+
+    const PATH_CREATE = '/opportunities/search';
+    this.navigate(PATH_CREATE);
+  }
+
+  handleMobileClickCalculator() {
+    this.closeMenu();
+
+    const PATH_CALCULATOR = 'calculator';
+    this.navigate(PATH_CALCULATOR);
+  }
+
+  handleClickLogo() {
+    this.closeMenu();
+
+    const PATH_ROOT = '/';
+    this.navigate(PATH_ROOT);
+  }
+  
 }
