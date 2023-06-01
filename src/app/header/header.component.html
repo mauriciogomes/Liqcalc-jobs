@@ -7,13 +7,13 @@
   <div class="menu-container">
     <nav>
       <div class="menu-mobile">
-        <span class="material-icons-outlined" (click)="handleClickMobileMenu()">menu</span>
+        <span class="menu-mobile__icon material-icons-outlined" (click)="handleClickMobileMenu()">menu</span>
 
-        <div class="menu-mobile__list" *ngIf="isMobileMenuOpen">
-          <ul>
-            <li>Sobre mim</li>
-            <li>Projetos</li>
-            <li>Tecnologias</li>
+        <div class="menu-mobile__content" *ngIf="isMobileMenuOpen">
+          <ul class="menu-mobile__list">
+            <li class="menu-mobile__list__item">Sobre mim</li>
+            <li class="menu-mobile__list__item">Projetos</li>
+            <li class="menu-mobile__list__item">Tecnologias</li>
           </ul>
         </div>
       </div>
