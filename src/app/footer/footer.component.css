@@ -1,3 +1,5 @@
+/* Main styles - mobile */
+
 .footer {
   background-color: var(--gray);
   color: var(--white);
@@ -76,4 +78,34 @@
 }
 .social-icon--linkedin:hover {
   color: var(--gray);
+}
+
+/* Media queries - tablets and small desktops */
+@media screen and (min-width: 600px) {
+  .footer {
+    display: block;
+    position: relative;
+    padding: 2.2em var(--rwd-horizontal-padding);
+  }
+
+  .logo-container {
+    width: 205px;
+  }
+
+  .site-map {
+    width: 205px;
+    text-align: right;
+  }
+
+  .author {
+    position: absolute;
+    right: var(--rwd-horizontal-padding);
+    top: 3.8em;
+  }
+}
+
+/* Media queries - horizontal tablets, desktops and larger */
+@media screen and (min-width: 1200px) {
+  /*TODO parece melhor alternar, para 3 colunas, em 1024px */
+  
 }
