@@ -19,6 +19,24 @@ body{
 		url('./../assets/fonts/basic-dev-social.ttf');
 }
 
+.social-icon {
+	font-family: 'Basic Dev Social' !important;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.social-icon--whatsapp:before {
+	content: "\e900";
+}
+
+.social-icon--github:before {
+	content: "\e901";
+}
+
+.social-icon--linkedin:before {
+	content: "\e902";
+}
+
 /* Global Variables */
 :root {
 	--primary-hue: 231;
@@ -30,7 +48,7 @@ body{
 	--secondary-light: hsl(var(--secondary-hue), 70%, 70%);
 
 	--dark-gray: #333333;
-	--gray: #525252;
-	--light-gray: #f2f2f2;
+	--gray: rgb(82, 82, 82);
+	--light-gray: rgb(242, 242, 242);
 	--white: #ffffff;
 }
