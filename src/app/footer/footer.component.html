@@ -5,15 +5,15 @@
   </div>
 
   <ul class="site-map">
-    <a class="site-map__link">
+    <a class="site-map__link" (click)="handleClickSearch()">
       <li class="site-map__link__label">Buscar vaga</li>
     </a>
 
-    <a class="site-map__link">
+    <a class="site-map__link" (click)="handleClickCreate()">
       <li class="site-map__link__label">Cadastrar vaga</li>
     </a>
 
-    <a class="site-map__link">
+    <a class="site-map__link" (click)="handleClickCalculator()">
       <li class="site-map__link__label">Calcular salário</li>
     </a>
   </ul>
@@ -24,11 +24,11 @@
     </div>
 
     <div class="author__social">
-      <div class="author__social__icon author__social__icon--linkedin">
+      <div class="author__social__icon author__social__icon--linkedin" (click)="openLinkedin()">
         <div class="social-icon social-icon--linkedin"></div>
       </div>
-      <div class="social-icon social-icon--whatsapp"></div>
-      <div class="social-icon social-icon--github"></div>
+      <div class="social-icon social-icon--whatsapp" (click)="openWhatsapp()"></div>
+      <div class="social-icon social-icon--github" (click)="openGithub()"></div>
       
     </div>
   </div>
