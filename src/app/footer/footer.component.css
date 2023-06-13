@@ -105,7 +105,22 @@
 }
 
 /* Media queries - horizontal tablets, desktops and larger */
-@media screen and (min-width: 1200px) {
-  /*TODO parece melhor alternar, para 3 colunas, em 1024px */
-  
+@media screen and (min-width: 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  .site-map {
+    margin-top: 0.8em;
+    text-align: left;
+  }
+
+  .author {
+    position: relative;
+    right: auto;
+    top: 1.4em;
+  }
 }
