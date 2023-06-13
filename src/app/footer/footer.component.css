@@ -85,7 +85,6 @@
   .footer {
     display: block;
     position: relative;
-    padding: 2.2em var(--rwd-horizontal-padding);
   }
 
   .logo-container {
@@ -101,6 +100,15 @@
     position: absolute;
     right: var(--rwd-horizontal-padding);
     top: 3.8em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 2.2em var(--rwd-horizontal-padding);
+    max-width: 1064px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

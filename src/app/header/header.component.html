@@ -33,10 +33,24 @@
       </div>
     
       <div class="menu-spread">
-        <ul>
-          <li>Sobre mim</li>
-          <li>Projetos</li>
-          <li>Tecnologias</li>
+        <ul class="menu-spread__list">
+          <li
+            class="menu-spread__list__item"
+            [class.menu-spread__list__item--selected]="(activePage$ | async) == 'search'"
+            (click)="handleClickSearch()"
+          >Buscar vaga</li>
+
+          <li
+            class="menu-spread__list__item"
+            [class.menu-spread__list__item--selected]="(activePage$ | async) == 'create'"
+            (click)="handleClickCreate()"
+          >Cadastrar vaga</li>
+
+          <li
+            class="menu-spread__list__item"
+            [class.menu-spread__list__item--selected]="(activePage$ | async) == 'calculator'"
+            (click)="handleClickCalculator()"
+          >Calcular salário</li>
         </ul>
       </div>
     </nav>

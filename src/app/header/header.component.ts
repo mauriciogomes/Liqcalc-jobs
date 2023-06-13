@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
+// Services
+import { StatesService } from '../shared/data-access/states.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +13,14 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   isMobileMenuOpen: boolean = false;
+  activePage$: Observable<string>;
 
   constructor(
-    public router: Router
-  ) { }
+    public router: Router,
+    public statesService: StatesService
+  ) {
+    this.activePage$ = this.statesService.getActivePage();
+  }
 
   ngOnInit(): void {
   }
@@ -31,23 +39,38 @@ export class HeaderComponent implements OnInit {
 
   handleMobileClickSearch() {
     this.closeMenu();
-
-    const PATH_SEARCH = '/opportunities/search';
-    this.navigate(PATH_SEARCH);
+    this.handleClickSearch();
   }
 
   handleMobileClickCreate() {
     this.closeMenu();
-
-    const PATH_CREATE = '/opportunities/search';
-    this.navigate(PATH_CREATE);
+    this.handleClickCreate();
   }
 
   handleMobileClickCalculator() {
     this.closeMenu();
+    this.handleClickCalculator();
+  }
 
+  handleClickSearch() {
+    const PATH_SEARCH = '/opportunities/search';
+    this.navigate(PATH_SEARCH);
+
+    this.statesService.setActivePage('search');
+  }
+
+  handleClickCreate() {
+    const PATH_CREATE = '/opportunities/search';
+    this.navigate(PATH_CREATE);
+
+    this.statesService.setActivePage('create');
+  }
+
+  handleClickCalculator() {
     const PATH_CALCULATOR = 'calculator';
     this.navigate(PATH_CALCULATOR);
+
+    this.statesService.setActivePage('calculator');
   }
 
   handleClickLogo() {
@@ -55,6 +78,8 @@ export class HeaderComponent implements OnInit {
 
     const PATH_ROOT = '/';
     this.navigate(PATH_ROOT);
+
+    this.statesService.clearActivePage();
   }
   
 }
