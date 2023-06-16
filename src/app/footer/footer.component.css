@@ -4,9 +4,15 @@
   background-color: var(--gray);
   color: var(--white);
   padding: 1.5em;
+}
+
+.footer__content {
+  width: 100%;
+  max-width: 1064px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 }
 
 .logo-container {
@@ -29,6 +35,10 @@
 .site-map__link {
   line-height: 2.5em;
   cursor: pointer;
+  color: rgba(242,242,242, 0.8);
+}
+.site-map__link:hover {
+  color: rgba(242,242,242, 1);
 }
 
 .author__name {
@@ -82,7 +92,7 @@
 
 /* Media queries - tablets and small desktops */
 @media screen and (min-width: 600px) {
-  .footer {
+  .footer__content {
     display: block;
     position: relative;
   }
@@ -106,15 +116,12 @@
 @media screen and (min-width: 768px) {
   .footer {
     padding: 2.2em var(--rwd-horizontal-padding);
-    max-width: 1064px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
 /* Media queries - horizontal tablets, desktops and larger */
 @media screen and (min-width: 1024px) {
-  .footer {
+  .footer__content {
     display: flex;
     flex-direction: row;
     align-items: start;

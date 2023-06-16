@@ -1,5 +1,28 @@
 /* Variables */
 
 /* Main styles - mobile-first */
+.start {
+
+}
+
+.start__content {
+  width: 100%;
+  max-width: 1064px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.hero-section {
+  box-sizing: border-box;
+  padding: 1.5em;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.hero-section__title {
+  color: var(--white);
+}
 
 /* Media queries */
