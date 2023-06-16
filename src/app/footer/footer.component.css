@@ -35,6 +35,10 @@
 .site-map__link {
   line-height: 2.5em;
   cursor: pointer;
+  color: rgba(242,242,242, 0.8);
+}
+.site-map__link:hover {
+  color: rgba(242,242,242, 1);
 }
 
 .author__name {
