@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
 
   isMobileMenuOpen: boolean = false;
   activePage$: Observable<string>;
+
+  isCastShadow: boolean = false;
 
   constructor(
     public router: Router,
@@ -82,4 +84,11 @@ export class HeaderComponent implements OnInit {
     this.statesService.clearActivePage();
   }
   
+  @HostListener('window:scroll', []) onScroll() {
+    if(window.scrollY > 0) {
+      this.isCastShadow = true;
+    } else {
+      this.isCastShadow = false;
+    }
+  }
 }

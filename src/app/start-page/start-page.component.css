@@ -25,4 +25,19 @@
   color: var(--white);
 }
 
+.opportunities {
+  margin: 3rem 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  border-radius: 4px;
+  background-color: var(--primary-light);
+  height: 100px;
+  width: 33%;
+}
+
 /* Media queries */
