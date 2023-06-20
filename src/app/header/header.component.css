@@ -11,6 +11,10 @@
   background-color: var(--white);
 }
 
+.header--shadow {
+  box-shadow: 0px 1px 7px rgba(100,100,100, 0.5);
+}
+
 .header__left {
   display: flex;
   align-items: center;
