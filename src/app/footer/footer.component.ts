@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StatesService } from '../shared/data-access/states.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    public statesService: StatesService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -20,16 +24,22 @@ export class FooterComponent implements OnInit {
   handleClickSearch() {
     const PATH_SEARCH = '/opportunities/search';
     this.navigate(PATH_SEARCH);
+
+    this.statesService.setActivePage('search');
   }
 
   handleClickCreate() {
     const PATH_CREATE = '/opportunities/search';
     this.navigate(PATH_CREATE);
+
+    this.statesService.setActivePage('create');
   }
 
   handleClickCalculator() {
     const PATH_CALCULATOR = 'calculator';
     this.navigate(PATH_CALCULATOR);
+
+    this.statesService.setActivePage('calculator');
   }
 
   openLinkedin() {
