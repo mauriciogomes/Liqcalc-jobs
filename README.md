@@ -1,9 +1,8 @@
 # Liqcalc Jobs
 
-Originalmente era uma calculadora de salário líquido com base nas alíquotas da previdência e IR.
-Contudo, a aplicação está sendo expandida para se tornar um site de vagas.
+Um site de vagas que possui uma calculadora de salário líquido com base nas alíquotas da previdência e IR.
 
-Utilizando *Angular*, Typescript, HTML e CSS.
+Utilizando **Angular**, Typescript, HTML e CSS.
 
 Autor: Maurício J. Gomes
 Contato: `maur.gomes@gmail.com`
