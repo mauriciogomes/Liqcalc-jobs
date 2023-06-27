@@ -58,4 +58,12 @@ body{
 	/* Spacing */
 
 	--rwd-horizontal-padding: 5vw;
+
+	/* Shadow */
+	--header-shadow: 0px 1px 7px rgba(100,100,100, 0.5);
+	--material-shadow: 0px 1px 7px rgba(100,100,100, 0.5);
 }
+
+
+/* Utilities */
+

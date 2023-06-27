@@ -7,7 +7,7 @@
 
 .start__content {
   width: 100%;
-  max-width: 1064px;
+  /* max-width: 1064px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,9 +21,39 @@
   background-image: linear-gradient(to right, var(--primary), var(--secondary));
 }
 
-.hero-section__title {
+.hero-section__content {
+  width: 100%;
+  position: relative;
+  max-width: 775px;
+  margin: 0 auto;
+}
+
+.hero-section__content__title {
   color: var(--white);
 }
+
+.hero-section__content__instruction {
+  color: var(--white);
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  max-width: 70%;
+  margin: 0.5em 0 0.7em 0;
+}
+
+.hero-section__content__bottom {
+  color: var(--white);
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin: 0.5em 0 1.2em 0;
+}
+
+.big-search {
+  width: 100%;
+}
+
+
 
 .opportunities {
   margin: 3rem 0;
