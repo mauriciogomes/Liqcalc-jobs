@@ -1,59 +1,63 @@
 <div class="header" [class.header--shadow]="isCastShadow">
-  <div class="header__left">
-    <img
-      class="logo"
-      src="./../../assets/logo-color.svg"
-      (click)="handleClickLogo()"
-    >
-    <h1 class="site-title">Liqcalc Jobs</h1>
-  </div>
+  <div class="header__content">
 
-  <div class="menu-container">
-    <nav>
-      <div class="menu-mobile">
-        <span
-          class="menu-mobile__icon material-icons-outlined"
-          [class.menu-mobile__icon--hidden]="isMobileMenuOpen"
-          (click)="handleClickMobileMenu()"
-        >menu</span>
-
-        <span
-          class="menu-mobile__icon material-icons-outlined"
-          [class.menu-mobile__icon--hidden]="!isMobileMenuOpen"
-          (click)="closeMenu()"
-        >close</span>
-
-        <div class="menu-mobile__content" *ngIf="isMobileMenuOpen">
-          <ul class="menu-mobile__list">
-            <li class="menu-mobile__list__item" (click)="handleMobileClickSearch()">Buscar vaga</li>
-            <li class="menu-mobile__list__item" (click)="handleMobileClickCreate()">Cadastrar vaga</li>
-            <li class="menu-mobile__list__item" (click)="handleMobileClickCalculator()">Calcular salário</li>
+    <div class="header__content__left">
+      <img
+        class="logo"
+        src="./../../assets/logo-color.svg"
+        (click)="handleClickLogo()"
+      >
+      <h1 class="site-title">Liqcalc Jobs</h1>
+    </div>
+  
+    <div class="menu-container">
+      <nav>
+        <div class="menu-mobile">
+          <span
+            class="menu-mobile__icon material-icons-outlined"
+            [class.menu-mobile__icon--hidden]="isMobileMenuOpen"
+            (click)="handleClickMobileMenu()"
+          >menu</span>
+  
+          <span
+            class="menu-mobile__icon material-icons-outlined"
+            [class.menu-mobile__icon--hidden]="!isMobileMenuOpen"
+            (click)="closeMenu()"
+          >close</span>
+  
+          <div class="menu-mobile__content" *ngIf="isMobileMenuOpen">
+            <ul class="menu-mobile__list">
+              <li class="menu-mobile__list__item" (click)="handleMobileClickSearch()">Buscar vaga</li>
+              <li class="menu-mobile__list__item" (click)="handleMobileClickCreate()">Cadastrar vaga</li>
+              <li class="menu-mobile__list__item" (click)="handleMobileClickCalculator()">Calcular salário</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="menu-spread">
+          <ul class="menu-spread__list">
+            <li
+              class="menu-spread__list__item"
+              [class.menu-spread__list__item--selected]="(activePage$ | async) == 'search'"
+              (click)="handleClickSearch()"
+            >Buscar vaga</li>
+  
+            <li
+              class="menu-spread__list__item"
+              [class.menu-spread__list__item--selected]="(activePage$ | async) == 'create'"
+              (click)="handleClickCreate()"
+            >Cadastrar vaga</li>
+  
+            <li
+              class="menu-spread__list__item"
+              [class.menu-spread__list__item--selected]="(activePage$ | async) == 'calculator'"
+              (click)="handleClickCalculator()"
+            >Calcular salário</li>
           </ul>
         </div>
-      </div>
-    
-      <div class="menu-spread">
-        <ul class="menu-spread__list">
-          <li
-            class="menu-spread__list__item"
-            [class.menu-spread__list__item--selected]="(activePage$ | async) == 'search'"
-            (click)="handleClickSearch()"
-          >Buscar vaga</li>
-
-          <li
-            class="menu-spread__list__item"
-            [class.menu-spread__list__item--selected]="(activePage$ | async) == 'create'"
-            (click)="handleClickCreate()"
-          >Cadastrar vaga</li>
-
-          <li
-            class="menu-spread__list__item"
-            [class.menu-spread__list__item--selected]="(activePage$ | async) == 'calculator'"
-            (click)="handleClickCalculator()"
-          >Calcular salário</li>
-        </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </div>
+  
 </div>
 
