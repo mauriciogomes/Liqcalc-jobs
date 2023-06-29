@@ -53,7 +53,24 @@
   width: 100%;
 }
 
+.big-search__input {
+  color: var(--dark-gray);
+}
 
+.big-search__icon {
+  position: absolute;
+  top: 0.15em;
+  right: 0.1em;
+  color: var(--gray);
+}
+
+.hexagon {
+  position: absolute;
+  display: inline-block;
+  height: 200px;
+  bottom: -2.5rem;
+  left: clamp(12rem, 66%, 40rem);
+}
 
 .opportunities {
   margin: 3rem 0;
@@ -71,3 +88,18 @@
 }
 
 /* Media queries */
+
+@media screen and (min-width: 600px) {
+  .hexagon {
+    height: 240px;
+    bottom: -3rem;
+    left: clamp(25rem, 77%, 40rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hexagon {
+    height: 256px;
+    bottom: -4rem;
+  }
+}
