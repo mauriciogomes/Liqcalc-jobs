@@ -10,6 +10,8 @@ export class StartPageComponent implements OnInit {
   @ViewChild('imageHexagon') hexagon;
   initialHexagonTop: number;
 
+  searchTerm: string;
+
   constructor(public renderer: Renderer2) { }
 
   ngOnInit(): void {
@@ -29,5 +31,13 @@ export class StartPageComponent implements OnInit {
     let delta = this.initialHexagonTop - elementTop;
     let degrees = delta * (0.5);
     this.renderer.setStyle(this.hexagon.nativeElement, 'transform', `rotate(${degrees}deg)`);
+  }
+
+  handleTypeSearch(event: KeyboardEvent) {
+    if(event.code == 'Enter') {
+      console.log(`enter: ${this.searchTerm}`);
+
+      // todo aqui joga pra tela de busca, já usando o termo digitado
+    }
   }
 }
