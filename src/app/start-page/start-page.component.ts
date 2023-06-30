@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-start-page',
@@ -7,9 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartPageComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('imageHexagon') hexagon;
+  initialHexagonTop: number;
+
+  searchTerm: string;
+
+  constructor(public renderer: Renderer2) { }
 
   ngOnInit(): void {
   }
 
+  @HostListener('window:scroll', []) onScroll() {
+    this.rotatePolygon();
+  }
+
+  rotatePolygon() {
+    const elementTop = this.hexagon.nativeElement.getBoundingClientRect().top;
+
+    if( !this.initialHexagonTop ) {
+      this.initialHexagonTop = elementTop;
+    }
+
+    let delta = this.initialHexagonTop - elementTop;
+    let degrees = delta * (0.5);
+    this.renderer.setStyle(this.hexagon.nativeElement, 'transform', `rotate(${degrees}deg)`);
+  }
+
+  handleTypeSearch(event: KeyboardEvent) {
+    if(event.code == 'Enter') {
+      console.log(`enter: ${this.searchTerm}`);
+
+      // todo aqui joga pra tela de busca, já usando o termo digitado
+    }
+  }
 }

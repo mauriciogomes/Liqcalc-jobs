@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // External Libs
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,6 +19,7 @@ const routes = [{
   declarations: [StartPageComponent],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild( routes ),
     MatFormFieldModule,
     MatInputModule

@@ -8,12 +8,25 @@
 
         <p class="hero-section__content__instruction">Digite o cargo que procura, por exemplo: desenvolvedor</p>
 
-        <form>
+        <form #searchForm="ngForm">
           <mat-form-field appearance="outline" class="big-search">
-            <input matInput type="text">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <input
+              matInput
+              type="text"
+              class="big-search__input"
+              name="search"
+              [(ngModel)]="searchTerm"
+              (keydown)="handleTypeSearch($event)"
+            >
+            <!-- Try to use mat-icon -->
+            <!-- <mat-icon matSuffix>search</mat-icon> -->
+            <span class="material-icons-outlined big-search__icon">
+              search
+            </span>
           </mat-form-field>
         </form>
+
+        <img src="assets/hexagon.svg" #imageHexagon class="hexagon">
 
         <p class="hero-section__content__bottom">+ de 300 vagas registradas</p>
 
