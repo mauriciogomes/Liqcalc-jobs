@@ -11,7 +11,7 @@
 
 .hero-section {
   box-sizing: border-box;
-  padding: 1.5em;
+  padding: 1.5rem 1rem;
   width: 100%;
   background-image: linear-gradient(to right, var(--primary), var(--secondary));
   overflow: hidden;
@@ -69,18 +69,68 @@
 }
 
 .opportunities {
-  margin: 3rem 0;
+  box-sizing: border-box;
+  /* padding: 1.5em; */
+  padding: 1.5rem 1rem;
   width: 100%;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px; */
+}
+
+.opportunities__title {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: var(--dark-gray);
+  margin-top: 0.5em;
+}
+
+.opportunities__list {
+  display: block;
+}
+
+.opportunities__large-list {
+  display: none;
 }
 
 .card {
+  box-sizing: border-box;
   border-radius: 4px;
-  background-color: var(--primary-light);
-  height: 100px;
-  width: 33%;
+  background-color: var(--primary-brighter);
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1.2rem;
+  color: var(--dark-gray);
+  box-shadow: var(--material-shadow);
+  border: 1px solid;
+  border-bottom-color: #959595;
+  border-right-color: #c5c5c5;
+  border-left-color: #c5c5c5;
+  border-top-color: #ddd;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 0.5em;
+}
+
+.card__header__title {
+  margin: 0;
+  display: inline-block;
+}
+
+.card__header__level {
+  margin: 0;
+  display: inline-block;
+}
+
+.card__text {
+  margin-bottom: 0.5em;
+}
+.card__text:last-child {
+  margin-bottom: 0;
 }
 
 /* Media queries */
@@ -97,5 +147,13 @@
   .hexagon {
     height: 256px;
     bottom: -4rem;
+  }
+
+  .opportunities__list {
+    display: none;
+  }
+
+  .opportunities__large-list {
+    display: block;
   }
 }
