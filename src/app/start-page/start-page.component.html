@@ -34,12 +34,33 @@
     </section>
 
     <section class="opportunities">
-      <div class="card">Teste</div>
-      <div class="card">Teste</div>
-      <div class="card">Teste</div>
-      <div class="card">Teste</div>
-      <div class="card">Teste</div>
-      <div class="card">Teste</div>
+      <h2 class="opportunities__title">NOVAS VAGAS</h2>
+
+      <div class="opportunities__list">
+        <div class="card" *ngFor="let opportunity of newOpportunities | slice:0:3">
+          <header class="card__header">
+            <h3 class="card__header__title">Titulo da vaga</h3>
+            <p class="card__header__level">Nivel</p>
+          </header>
+          <div class="card__text">Nome da empresa (Local)</div>
+          <div class="card__text">Salario a combinar</div>
+          <div class="card__text">Contrato - regime</div>
+        </div>
+        
+      </div>
+
+      <div class="opportunities__large-list">
+        <div class="card" *ngFor="let opportunity of newOpportunities">
+          <header class="card__header">
+            <h3 class="card__header__title">Titulo da vaga</h3>
+            <p class="card__header__level">Nivel</p>
+          </header>
+          <div class="card__text">Nome da empresa (Local)</div>
+          <div class="card__text">Salario a combinar</div>
+          <div class="card__text">Contrato - regime</div>
+        </div>
+      </div>
+
     </section>
 
   </div>

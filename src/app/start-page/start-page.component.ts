@@ -12,6 +12,8 @@ export class StartPageComponent implements OnInit {
 
   searchTerm: string;
 
+  newOpportunities: any[] = [{},{},{},{},{},{}];
+
   constructor(public renderer: Renderer2) { }
 
   ngOnInit(): void {
