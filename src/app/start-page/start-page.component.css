@@ -70,27 +70,32 @@
 
 .opportunities {
   box-sizing: border-box;
-  /* padding: 1.5em; */
   padding: 1.5rem 1rem;
   width: 100%;
-  /* display: flex;
-  flex-wrap: wrap;
-  gap: 10px; */
 }
 
-.opportunities__title {
+.opportunities__content {
+  width: 100%;
+  position: relative;
+  max-width: 1064px;
+  margin: 0 auto;
+}
+
+.opportunities__content__title {
   font-size: 1.3em;
   font-weight: 400;
   color: var(--dark-gray);
   margin-top: 0.5em;
 }
 
-.opportunities__list {
+.opportunities__content__list {
   display: block;
 }
 
-.opportunities__large-list {
+.opportunities__content__large-list {
   display: none;
+  flex-wrap: wrap;
+  gap: 1.2rem;
 }
 
 .card {
@@ -121,11 +126,6 @@
   display: inline-block;
 }
 
-.card__header__level {
-  margin: 0;
-  display: inline-block;
-}
-
 .card__text {
   margin-bottom: 0.5em;
 }
@@ -143,17 +143,36 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .hero-section {
+    padding: 2.2em var(--rwd-horizontal-padding);
+  }
+
+  .opportunities {
+    padding: 2.2em var(--rwd-horizontal-padding);
+  }
+
+  .opportunities__content__list {
+    display: none;
+  }
+
+  .opportunities__content__large-list {
+    display: flex;
+  }
+
+  .card {
+    flex: 48%;
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .hexagon {
     height: 256px;
     bottom: -4rem;
   }
 
-  .opportunities__list {
-    display: none;
-  }
-
-  .opportunities__large-list {
-    display: block;
+  .card {
+    flex: 32%;
   }
 }

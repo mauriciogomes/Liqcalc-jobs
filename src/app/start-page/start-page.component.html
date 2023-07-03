@@ -34,30 +34,29 @@
     </section>
 
     <section class="opportunities">
-      <h2 class="opportunities__title">NOVAS VAGAS</h2>
-
-      <div class="opportunities__list">
-        <div class="card" *ngFor="let opportunity of newOpportunities | slice:0:3">
-          <header class="card__header">
-            <h3 class="card__header__title">Titulo da vaga</h3>
-            <p class="card__header__level">Nivel</p>
-          </header>
-          <div class="card__text">Nome da empresa (Local)</div>
-          <div class="card__text">Salario a combinar</div>
-          <div class="card__text">Contrato - regime</div>
-        </div>
+      <div class="opportunities__content">
         
-      </div>
-
-      <div class="opportunities__large-list">
-        <div class="card" *ngFor="let opportunity of newOpportunities">
-          <header class="card__header">
-            <h3 class="card__header__title">Titulo da vaga</h3>
-            <p class="card__header__level">Nivel</p>
-          </header>
-          <div class="card__text">Nome da empresa (Local)</div>
-          <div class="card__text">Salario a combinar</div>
-          <div class="card__text">Contrato - regime</div>
+        <h2 class="opportunities__content__title">NOVAS VAGAS</h2>
+  
+        <div class="opportunities__content__list">
+          <div class="card" *ngFor="let opportunity of newOpportunities | slice:0:3">
+            <header class="card__header">
+              <h3 class="card__header__title">Analista Desenvolvedor Front End - Júnior</h3>
+            </header>
+            <div class="card__text">Entermix Tecnology Solutions (Florianopolis - SC)</div>
+            <div class="card__text">CLT - Presencial - Salario a combinar</div>
+          </div>
+          
+        </div>
+  
+        <div class="opportunities__content__large-list">
+          <div class="card" *ngFor="let opportunity of newOpportunities">
+            <header class="card__header">
+              <h3 class="card__header__title">Titulo da vaga</h3>
+            </header>
+            <div class="card__text">Nome da empresa (Local)</div>
+            <div class="card__text">CLT - Presencial - Salario a combinar</div>
+          </div>
         </div>
       </div>
 
