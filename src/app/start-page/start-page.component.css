@@ -70,27 +70,33 @@
 
 .opportunities {
   box-sizing: border-box;
-  /* padding: 1.5em; */
   padding: 1.5rem 1rem;
   width: 100%;
-  /* display: flex;
-  flex-wrap: wrap;
-  gap: 10px; */
 }
 
-.opportunities__title {
+.opportunities__content {
+  width: 100%;
+  position: relative;
+  max-width: 1064px;
+  margin: 0 auto;
+}
+
+.opportunities__content__title {
   font-size: 1.3em;
   font-weight: 400;
   color: var(--dark-gray);
   margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
-.opportunities__list {
+.opportunities__content__list {
   display: block;
 }
 
-.opportunities__large-list {
+.opportunities__content__large-list {
   display: none;
+  flex-wrap: wrap;
+  gap: 1.2rem;
 }
 
 .card {
@@ -107,6 +113,14 @@
   border-right-color: #c5c5c5;
   border-left-color: #c5c5c5;
   border-top-color: #ddd;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: var(--material-shadow-elevated);
+}
+
+.card:hover .card__header__title {
+  color: var(--primary);
 }
 
 .card__header {
@@ -119,11 +133,7 @@
 .card__header__title {
   margin: 0;
   display: inline-block;
-}
-
-.card__header__level {
-  margin: 0;
-  display: inline-block;
+  font-size: 1.2em;
 }
 
 .card__text {
@@ -143,17 +153,48 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .hero-section {
+    padding: 2.2em var(--rwd-horizontal-padding);
+  }
+
+  .opportunities {
+    padding: 2.5em var(--rwd-horizontal-padding) 3.5em;
+  }
+
+  .opportunities__content__list {
+    display: none;
+  }
+
+  .opportunities__content__large-list {
+    display: flex;
+  }
+
+  .card {
+    flex: 48%;
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .hexagon {
     height: 256px;
     bottom: -4rem;
   }
 
-  .opportunities__list {
-    display: none;
+  .opportunities {
+    padding: 3em var(--rwd-horizontal-padding) 5em;
   }
 
-  .opportunities__large-list {
-    display: block;
+  .opportunities__content__title {
+    margin-bottom: 1.5em;
+  }
+
+  .opportunities__content__large-list {
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex: 31%;
   }
 }
