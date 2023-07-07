@@ -62,10 +62,10 @@ export class HeaderComponent implements OnInit {
   }
 
   handleClickCreate() {
-    const PATH_CREATE = '/opportunities/search';
-    this.navigate(PATH_CREATE);
+    const PATH_CREATION = '/opportunities/creation';
+    this.navigate(PATH_CREATION);
 
-    this.statesService.setActivePage('create');
+    this.statesService.setActivePage('creation');
   }
 
   handleClickCalculator() {

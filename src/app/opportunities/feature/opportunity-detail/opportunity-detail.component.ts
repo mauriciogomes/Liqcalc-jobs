@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpportunityDetailComponent implements OnInit {
 
+  description = "Prévia: esta página exibirá o detalhamento da vaga e a opção de cadidatar-se."
+
   constructor() { }
 
   ngOnInit(): void {

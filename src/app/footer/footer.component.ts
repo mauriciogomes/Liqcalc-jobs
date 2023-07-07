@@ -29,10 +29,10 @@ export class FooterComponent implements OnInit {
   }
 
   handleClickCreate() {
-    const PATH_CREATE = '/opportunities/search';
+    const PATH_CREATE = '/opportunities/creation';
     this.navigate(PATH_CREATE);
 
-    this.statesService.setActivePage('create');
+    this.statesService.setActivePage('creation');
   }
 
   handleClickCalculator() {

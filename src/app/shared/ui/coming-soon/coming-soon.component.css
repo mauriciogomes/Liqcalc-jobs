@@ -1,0 +1,30 @@
+.coming-soon {
+  margin: 0 auto;
+  position: relative;
+  width: clamp(100px, 90%, 560px);
+  color: var(--dark-gray);
+  padding: 3rem 0 5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.header__image {
+  display: inline-block;
+  width: clamp(50px, 25%, 140px);
+  filter: brightness(1.5);
+}
+
+.header__title {
+  display: inline-block;
+  color: var(--gray);
+}
+
+.description {
+  margin-top: 2rem;
+  text-align: center;
+}

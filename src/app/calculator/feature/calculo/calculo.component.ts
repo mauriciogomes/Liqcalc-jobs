@@ -10,6 +10,8 @@ import { CalculadoraService }	 from '../../../calculadora.service';
 })
 export class CalculoComponent implements OnInit {
 
+	description = "Prévia: uma calculadora de salário líquido baseada nas alíquotas atuais da previdência e IR. Deverá exibir os valores deduzidos e também um gráfico informativo."
+
 	entrada = {salarioBruto: '0', isServidorFederal: false};
 
 	saida = {

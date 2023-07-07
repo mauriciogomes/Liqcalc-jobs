@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit, Renderer2, ViewChild } from '@angular/
 import { OpportunitiesService } from '../opportunities/data-access/opportunities.service';
 import { Opportunity } from '../shared/opportunity.model';
 import { OpportunityLevel } from '../shared/opportunity-level.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start-page',
@@ -19,6 +20,7 @@ export class StartPageComponent implements OnInit {
 
   constructor(
     public renderer: Renderer2,
+    public router: Router,
     public opportunitiesService: OpportunitiesService
   ) { }
 
@@ -55,5 +57,9 @@ export class StartPageComponent implements OnInit {
 
   getLevelValue(value) {
     return OpportunityLevel[value];
+  }
+
+  handleClickOpportunity() {
+    this.router.navigateByUrl('opportunities/detail');
   }
 }
