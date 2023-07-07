@@ -9,6 +9,7 @@ import { TabelasAliquotasComponent } from '../tabelas-aliquotas/tabelas-aliquota
 // Modules
 import { CalculatorShellRoutingModule } from './calculator-shell-routing.module';
 import { PipesModule } from 'src/app/shared/pipes/pipes.module';
+import { ComingSoonModule } from 'src/app/shared/ui/coming-soon/coming-soon.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PipesModule } from 'src/app/shared/pipes/pipes.module';
     CommonModule,
     FormsModule,
     CalculatorShellRoutingModule,
-    PipesModule
+    PipesModule,
+    ComingSoonModule
   ]
 })
 export class CalculatorShellModule { }

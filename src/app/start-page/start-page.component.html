@@ -39,7 +39,7 @@
         <h2 class="opportunities__content__title">NOVAS VAGAS</h2>
   
         <div class="opportunities__content__list">
-          <div class="card" *ngFor="let opportunity of newOpportunities | slice:0:3">
+          <div class="card" *ngFor="let opportunity of newOpportunities | slice:0:3" (click)="handleClickOpportunity()">
             <header class="card__header">
               <h3 class="card__header__title">{{opportunity.title + ' - ' + opportunity.level}}</h3>
             </header>
@@ -52,7 +52,7 @@
         </div>
   
         <div class="opportunities__content__large-list">
-          <div class="card" *ngFor="let opportunity of newOpportunities">
+          <div class="card" *ngFor="let opportunity of newOpportunities" (click)="handleClickOpportunity()">
             <header class="card__header">
               <h3 class="card__header__title">{{opportunity.title + ' - ' + opportunity.level}}</h3>
             </header>
