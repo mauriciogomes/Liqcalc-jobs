@@ -50,8 +50,9 @@ export class StartPageComponent implements OnInit {
   handleTypeSearch(event: KeyboardEvent) {
     if(event.code == 'Enter') {
       //console.log(`enter: ${this.searchTerm}`);
-
       // todo aqui joga pra tela de busca, já usando o termo digitado
+      this.router.navigateByUrl('opportunities/search');
+
     }
   }
 
