@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable, Subscription, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 // Model
 import { Opportunity } from 'src/app/shared/opportunity.model';
@@ -24,13 +24,22 @@ export class OpportunitiesService {
 
   constructor(public httpClient: HttpClient) { }
 
-  getOpportunities(): Observable<Opportunity[]> {
+  getOpportunities(): Observable<Opportunity[] | HttpErrorResponse> {
+
+    let headers = new HttpHeaders();
+    headers.append('Access-Control-Request-Method', 'GET');
+    
+    const options = {
+      headers: headers
+    }
+
     console.log('call /opportunities');
-    return this.httpClient.get(this.baseUrl + "opportunities")
+    return this.httpClient.get(this.baseUrl + "opportunities", options)
       .pipe(
         map((data) => this.parseOpportunityData(data)),
-        map((data) => data as Opportunity[])
-      );
+        map((data) => data as Opportunity[]),
+        catchError((error: HttpErrorResponse) => { console.log(error); return throwError(error) })
+      )
   }
 
   getLastOpportunities(): Observable<Opportunity[]> {
