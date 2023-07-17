@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://liqcalc-jobs-api.vercel.app/"
+  apiUrl: "https://liqcalc-jobs-api.vercel.app"
 };
