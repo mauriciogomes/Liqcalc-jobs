@@ -1,0 +1,39 @@
+::ng-deep .filter-field {
+
+  .mat-form-field-wrapper {
+    padding-bottom: 1.1em;
+  }
+
+  &.mat-form-field-appearance-outline {
+
+    .mat-form-field-outline {
+      border-radius: 5px;
+    }
+
+    // Thick border color (Hover, active)
+    .mat-form-field-outline-thick {
+      color: var(--gray)
+    }
+  
+    .mat-form-field-infix {
+      padding: 0.4em 0 0.8em 0;
+    }
+
+    // Adjusted label margin
+    .mat-form-field-label {
+      margin-top: -0.55em;
+    }
+    &.mat-form-field-can-float.mat-form-field-should-float {
+      .mat-form-field-label {
+        margin-top: -0.3em;
+      }
+    }
+
+    // Adjusted arrow
+    .mat-select-arrow-wrapper {
+      transform: translateY(0%);
+    }
+    
+  }
+
+}

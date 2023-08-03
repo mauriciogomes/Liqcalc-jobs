@@ -1,1 +1,113 @@
-<app-coming-soon [description]="description"></app-coming-soon>
+<div class="search">
+  <section class="search__content">
+
+    <div class="filters-container">
+      <h2 class="filters-container__title">BUSCAR VAGA</h2>
+
+      <div class="filters">
+        <form #searchForm="ngForm">
+          <fieldset>
+            <mat-form-field appearance="outline" class="filter-field keyword-field">
+              <mat-label>{{searchFields.keyword.label}}</mat-label>
+              <input
+                matInput
+                type="text"
+                class="keyword-field__input"
+                name="keyword"
+                
+              >
+              
+              <mat-icon class="material-icons-outlined filter-field__icon-prefix" matPrefix>search</mat-icon>
+              <!-- <span class="material-icons-outlined keyword-field__icon">
+                search
+              </span> -->
+
+              <mat-icon class="material-icons-outlined filter-field__icon-suffix" matSuffix>cancel</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="filter-field">
+              <mat-label>{{searchFields.level.label}}</mat-label>
+              <mat-select
+                multiple
+                name="level"
+                [(ngModel)]="searchFields.level.value"
+              >
+                <mat-option
+                  *ngFor="let option of searchFields.level.options"
+                  [value]="option.value"
+                >
+                  {{option.description}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="filter-field">
+              <mat-label>{{searchFields.contract.label}}</mat-label>
+              <mat-select
+                multiple
+                name="contract"
+                [(ngModel)]="searchFields.contract.value"
+              >
+                <mat-option
+                  *ngFor="let option of searchFields.contract.options"
+                  [value]="option.value"
+                >
+                  {{option.description}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="filter-field">
+              <mat-label>{{searchFields.regime.label}}</mat-label>
+              <mat-select
+                multiple
+                name="regime"
+                [(ngModel)]="searchFields.regime.value"
+              >
+                <mat-option
+                  *ngFor="let option of searchFields.regime.options"
+                  [value]="option.value"
+                >
+                  {{option.description}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="filter-field">
+              <mat-label>{{searchFields.salaryRange.label}}</mat-label>
+              <mat-select multiple name="salaryRange" [(ngModel)]="searchFields.salaryRange.value">
+                <mat-option
+                  *ngFor="let option of searchFields.salaryRange.options"
+                  [value]="option.value"
+                >
+                  {{option.description}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </fieldset>
+        </form>
+
+        <div class="expand-wrapper">
+          <div class="expand-wrapper__label">recolher</div>
+          <button mat-mini-fab>
+            <mat-icon class="material-icons-outlined">expand_less</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="opportunities-list">
+        <p class="opportunities-list__counter">
+          {{'3 vagas encontradas'}}
+        </p>
+
+        <ng-container *ngFor="let opportunity of opportunities">
+          <app-opportunity-card [value]="opportunity"></app-opportunity-card>
+
+        </ng-container>
+        
+      </div>
+    </div>
+
+  </section>
+</div>

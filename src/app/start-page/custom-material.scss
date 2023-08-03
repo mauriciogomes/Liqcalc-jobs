@@ -1,11 +1,15 @@
-::ng-deep {
-  .mat-form-field-outline {
-    background-color: var(--white);
-    border-radius: 5px;
-    box-shadow: 1px 1px 7px rgba(0,0,0, 0.4);
-  }
+::ng-deep .big-search {
 
-  .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0.4em 0 0.8em 0;
+  &.mat-form-field-appearance-outline {
+
+    .mat-form-field-outline {
+      background-color: var(--white);
+      border-radius: 5px;
+      box-shadow: 1px 1px 7px rgba(0,0,0, 0.4);
+    }
+  
+    .mat-form-field-infix {
+      padding: 0.4em 0 0.8em 0;
+    }
   }
 }

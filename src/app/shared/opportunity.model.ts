@@ -1,3 +1,4 @@
+import { Company } from "./company.model";
 import { OpportunityContract } from "./opportunity-contract.enum";
 import { OpportunityLevel } from "./opportunity-level.enum";
 import { OpportunityRegime } from "./opportunity-regime.enum";
@@ -12,7 +13,7 @@ export interface Opportunity {
   benefits: string,
   regime: OpportunityRegime,
   contract: OpportunityContract,
-  company: string,
+  company: Company,
   accept_outside?: boolean,
   registered: Date
 }
