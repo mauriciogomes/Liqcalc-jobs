@@ -1,0 +1,19 @@
+<!-- <article class="card">
+  {{value.title}}
+  {{value.company}}
+</article> -->
+
+<!-- todo: tornar esse template reaproveitavel -->
+<article class="card">
+  <header class="card__header">
+    <h3 class="card__header__title">{{value.title + ' - ' + value.level}}</h3>
+  </header>
+  <div class="card__text">{{value.company.name + ' - ' + value.company.location}}</div>
+  <div class="card__text">
+    {{value.contract + ' - ' + value.regime + ' - ' + (value.salary | currency:null:'symbol':'1.2-2')}}
+  </div>
+
+</article>
+
+
+<!-- todo: para telas maiores precisa de outro layout -->

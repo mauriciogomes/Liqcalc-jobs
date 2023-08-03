@@ -25,6 +25,7 @@
             ],
             "styles": [
               "src/styles/custom-material-theme.scss",
+              "src/styles/custom-material-styles.scss",
               "src/styles/styles.css"
             ],
             "stylePreprocessorOptions": {
