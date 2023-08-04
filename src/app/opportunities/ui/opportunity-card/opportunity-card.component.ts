@@ -9,6 +9,7 @@ import { Opportunity } from 'src/app/shared/opportunity.model';
 export class OpportunityCardComponent implements OnInit {
 
   @Input() value: Opportunity;
+  @Input() isResponsive: boolean = true;
 
   constructor() { }
 
