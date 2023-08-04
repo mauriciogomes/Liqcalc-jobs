@@ -3,7 +3,6 @@
   border-radius: 4px;
   background-color: var(--primary-brighter);
   width: 100%;
-  /* padding: 1em; */
   padding: 0.8rem 1.2rem;
   margin-bottom: 1.2rem;
   color: var(--dark-gray);
@@ -19,26 +18,73 @@
   box-shadow: var(--material-shadow-elevated);
 }
 
-.card:hover .card__header__title {
+.card:hover .header__title {
   color: var(--primary);
 }
 
-.card__header {
+.card__wrapper--responsible {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+}
+
+.card__wrapper__left {
+  width: 100%;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin-bottom: 0.5em;
 }
 
-.card__header__title {
+.header__title {
   margin: 0;
   display: inline-block;
   font-size: 1.2em;
 }
 
-.card__text {
+.text {
   margin-bottom: 0.5em;
 }
-.card__text:last-child {
+.text:last-child {
   margin-bottom: 0;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--description {
+  display: none;
+}
+
+.text--company {
+  display: block;
+}
+
+.text--contract {
+  display: block;
+}
+
+.card__wrapper__right {
+  display: none;
+  width: 40%; /* usar clamp */
+}
+
+/** Media Queries **/
+@media screen and (min-width: 1024px) {
+  .text--description {
+    display: block;
+  }
+  
+  .text--contract {
+    display: none;
+  }
+
+  .card__wrapper__right {
+    display: block;
+  }
 }

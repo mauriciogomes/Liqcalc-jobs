@@ -1,19 +1,46 @@
-<!-- <article class="card">
-  {{value.title}}
-  {{value.company}}
-</article> -->
-
-<!-- todo: tornar esse template reaproveitavel -->
 <article class="card">
-  <header class="card__header">
-    <h3 class="card__header__title">{{value.title + ' - ' + value.level}}</h3>
-  </header>
-  <div class="card__text">{{value.company.name + ' - ' + value.company.location}}</div>
-  <div class="card__text">
-    {{value.contract + ' - ' + value.regime + ' - ' + (value.salary | currency:null:'symbol':'1.2-2')}}
-  </div>
+
+  <ng-container *ngIf="isResponsive; else unresponsiveLayoutCard">
+    <div class="card__wrapper card__wrapper--responsible">
+      <div class="card__wrapper__left">
+        <header class="header">
+          <h3 class="header__title">{{value.title + ' - ' + value.level}}</h3>
+        </header>
+
+        <div class="text text--description">{{value.description}}</div>
+
+        <div class="text text--company">{{value.company.name + ' - ' + value.company.location}}</div>
+        
+        <div class="text text--contract">
+          {{value.contract + ' - ' + value.regime + ' - ' + (value.salary | currency:null:'symbol':'1.2-2')}}
+        </div>
+      </div>
+
+      <div class="card__wrapper__right">
+        <div class="text text--right">
+          {{value.salary | currency:null:'symbol':'1.2-2'}}
+        </div>
+        <div class="text text--right">
+          {{value.contract + ' - ' + value.regime}}
+        </div>
+        <div class="text text--right">
+          {{value.benefits}}
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #unresponsiveLayoutCard>
+    <div class="card__wrapper">
+      <header class="header">
+        <h3 class="header__title">{{value.title + ' - ' + value.level}}</h3>
+      </header>
+      <div class="text">{{value.company.name + ' - ' + value.company.location}}</div>
+      <div class="text">
+        {{value.contract + ' - ' + value.regime + ' - ' + (value.salary | currency:null:'symbol':'1.2-2')}}
+      </div>
+    </div>
+  </ng-template>
 
 </article>
 
-
-<!-- todo: para telas maiores precisa de outro layout -->
