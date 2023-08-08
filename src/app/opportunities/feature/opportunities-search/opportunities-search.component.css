@@ -8,9 +8,7 @@
 }
 
 .filters-container {
-  box-sizing: border-box;
   padding: 1rem 1.5rem 1.5rem;
-  width: 100%;
   max-width: 1064px;
   margin: 0 auto;
 }
@@ -122,6 +120,10 @@ fieldset {
 }
 
 @media screen and (min-width: 768px) {
+  .filters-container {
+    padding: 1rem var(--rwd-horizontal-padding) 1.5rem;
+  }
+
   fieldset {
     display: flex;
     flex-wrap: wrap;
