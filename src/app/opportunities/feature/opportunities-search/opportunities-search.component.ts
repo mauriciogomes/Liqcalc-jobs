@@ -67,7 +67,7 @@ export class OpportunitiesSearchComponent implements OnInit {
       index: 0,
       title: 'Desenvolvedor Front End',
       level: OpportunityLevel.Junior,
-      description: 'Desenvovler e testar (Mock)',
+      description: 'Desenvolver e testar soluções em front end, visando a qualidade e boa manutenção. Deverá manter uma boa comunicação com a equipe de backend e designer para realizar entregar assertivas.',
       salary: 3000.00,
       benefits: 'VT + VA',
       regime: OpportunityRegime.Remote,

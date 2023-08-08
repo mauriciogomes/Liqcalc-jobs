@@ -1,4 +1,8 @@
 /* Main styles - mobile-first */
+.search {
+  color: var(--dark-gray);
+}
+
 .search__content {
   width: 100%;
   display: flex;
@@ -85,6 +89,7 @@ fieldset {
   line-height: 0.8;
 }
 
+
 /** Media Queries **/
 
 @media screen and (min-width: 600px) {
@@ -165,6 +170,7 @@ fieldset {
 
   .filter-field {
     margin-right: 1%;
+    --select-input-width: calc( (100% - (30% + 4%)) / 4 );
   }
   .filter-field:last-child {
     margin-right: 0;
@@ -175,18 +181,18 @@ fieldset {
   }
 
   .level-field {
-    width: calc( (100% - (30% + 4%)) / 4 );
+    width: var(--select-input-width);
   }
 
   .contract-field {
-    width: calc( (100% - (30% + 4%)) / 4 );
+    width: var(--select-input-width);
   }
 
   .regime-field {
-    width: calc( (100% - (30% + 4%)) / 4 );
+    width: var(--select-input-width);
   }
 
   .salary-field {
-    width: calc( (100% - (30% + 4%)) / 4 );
+    width: var(--select-input-width);
   }
 }
