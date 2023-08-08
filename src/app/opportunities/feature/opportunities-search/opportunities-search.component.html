@@ -25,7 +25,7 @@
               <mat-icon class="material-icons-outlined filter-field__icon-suffix" matSuffix>cancel</mat-icon>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field">
+            <mat-form-field appearance="outline" class="filter-field level-field">
               <mat-label>{{searchFields.level.label}}</mat-label>
               <mat-select
                 multiple
@@ -41,7 +41,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field">
+            <mat-form-field appearance="outline" class="filter-field contract-field">
               <mat-label>{{searchFields.contract.label}}</mat-label>
               <mat-select
                 multiple
@@ -57,7 +57,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field">
+            <mat-form-field appearance="outline" class="filter-field regime-field">
               <mat-label>{{searchFields.regime.label}}</mat-label>
               <mat-select
                 multiple
@@ -73,7 +73,7 @@
               </mat-select>
             </mat-form-field>
   
-            <mat-form-field appearance="outline" class="filter-field">
+            <mat-form-field appearance="outline" class="filter-field salary-field">
               <mat-label>{{searchFields.salaryRange.label}}</mat-label>
               <mat-select multiple name="salaryRange" [(ngModel)]="searchFields.salaryRange.value">
                 <mat-option
