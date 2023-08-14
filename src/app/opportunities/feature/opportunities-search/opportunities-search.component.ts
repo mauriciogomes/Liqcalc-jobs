@@ -13,6 +13,8 @@ import { Opportunity } from 'src/app/shared/opportunity.model';
 })
 export class OpportunitiesSearchComponent implements OnInit {
 
+  isLoading: boolean = false;
+  
   searchFields = {
     "keyword": {
       label: "Título da vaga",

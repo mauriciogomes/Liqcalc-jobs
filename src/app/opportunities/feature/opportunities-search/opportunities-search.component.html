@@ -97,13 +97,26 @@
       </div>
 
       <div class="opportunities-list">
-        <p class="opportunities-list__counter">
-          {{'3 vagas encontradas'}}
-        </p>
 
-        <ng-container *ngFor="let opportunity of opportunities">
-          <app-opportunity-card [value]="opportunity"></app-opportunity-card>
+        <ng-container *ngIf="opportunities.length > 0 && !isLoading">
+          <p class="opportunities-list__counter">
+            {{ opportunities.length + ' vagas encontradas' }}
+          </p>
+  
+          <ng-container *ngFor="let opportunity of opportunities">
+            <app-opportunity-card [value]="opportunity"></app-opportunity-card>
+          </ng-container>
+        </ng-container>
 
+        <ng-container *ngIf="opportunities.length == 0 && !isLoading">
+          <p class="feedback-message">Nenhuma vaga encontrada nessa busca</p>
+          <p class="feedback-tip">Dica: você pode alterar os filtros para obter resultados diferentes.</p>
+        </ng-container>
+
+        <ng-container *ngIf="isLoading">
+          <div class="loader-wrapper">
+            <app-loader></app-loader>
+          </div>
         </ng-container>
         
       </div>
