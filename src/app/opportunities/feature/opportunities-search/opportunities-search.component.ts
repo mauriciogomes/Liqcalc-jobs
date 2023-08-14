@@ -14,6 +14,7 @@ import { Opportunity } from 'src/app/shared/opportunity.model';
 export class OpportunitiesSearchComponent implements OnInit {
 
   isLoading: boolean = false;
+  isFilterExpanded: boolean = false;
   
   searchFields = {
     "keyword": {
@@ -110,4 +111,15 @@ export class OpportunitiesSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  clearKeywordField() {
+    this.searchFields.keyword.value = null;
+  }
+
+  expandFilters() {
+    this.isFilterExpanded = true;
+  }
+
+  collapseFilters() {
+    this.isFilterExpanded = false;
+  }
 }

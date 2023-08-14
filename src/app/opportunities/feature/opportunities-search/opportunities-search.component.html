@@ -14,18 +14,23 @@
                 type="text"
                 class="keyword-field__input"
                 name="keyword"
-                
+                [(ngModel)]="searchFields.keyword.value"
               >
               
               <mat-icon class="material-icons-outlined filter-field__icon-prefix" matPrefix>search</mat-icon>
-              <!-- <span class="material-icons-outlined keyword-field__icon">
-                search
-              </span> -->
 
-              <mat-icon class="material-icons-outlined filter-field__icon-suffix" matSuffix>cancel</mat-icon>
+              <mat-icon
+                class="material-icons-outlined filter-field__icon-suffix"
+                [class.filter-field__icon-suffix--visible]="searchFields.keyword.value"
+                matSuffix
+                (click)="clearKeywordField()"
+              >
+                cancel
+              </mat-icon>
+
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field level-field">
+            <mat-form-field appearance="outline" class="filter-field level-field" *ngIf="isFilterExpanded">
               <mat-label>{{searchFields.level.label}}</mat-label>
               <mat-select
                 multiple
@@ -41,7 +46,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field contract-field">
+            <mat-form-field appearance="outline" class="filter-field contract-field" *ngIf="isFilterExpanded">
               <mat-label>{{searchFields.contract.label}}</mat-label>
               <mat-select
                 multiple
@@ -57,7 +62,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field regime-field">
+            <mat-form-field appearance="outline" class="filter-field regime-field" *ngIf="isFilterExpanded">
               <mat-label>{{searchFields.regime.label}}</mat-label>
               <mat-select
                 multiple
@@ -73,7 +78,7 @@
               </mat-select>
             </mat-form-field>
   
-            <mat-form-field appearance="outline" class="filter-field salary-field">
+            <mat-form-field appearance="outline" class="filter-field salary-field" *ngIf="isFilterExpanded">
               <mat-label>{{searchFields.salaryRange.label}}</mat-label>
               <mat-select multiple name="salaryRange" [(ngModel)]="searchFields.salaryRange.value">
                 <mat-option
@@ -89,10 +94,21 @@
         </form>
 
         <div class="expand-wrapper">
-          <div class="expand-wrapper__label">recolher</div>
-          <button mat-mini-fab>
-            <mat-icon class="material-icons-outlined">expand_less</mat-icon>
-          </button>
+          <ng-container *ngIf="!isFilterExpanded">
+            <div class="expand-wrapper__label">expandir</div>
+            <button mat-mini-fab>
+              <mat-icon class="material-icons-outlined" (click)="expandFilters()">expand_more</mat-icon>
+            </button>
+
+          </ng-container>
+
+          <ng-container *ngIf="isFilterExpanded">
+            <div class="expand-wrapper__label">recolher</div>
+            <button mat-mini-fab>
+              <mat-icon class="material-icons-outlined" (click)="collapseFilters()">expand_less</mat-icon>
+            </button>
+
+          </ng-container>
         </div>
       </div>
 

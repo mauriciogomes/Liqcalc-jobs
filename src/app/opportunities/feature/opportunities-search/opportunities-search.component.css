@@ -14,6 +14,8 @@
 .filters-container {
   padding: 1rem 1.5rem 1.5rem;
   max-width: 1064px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -60,7 +62,18 @@ fieldset {
   right: -3px;
   top: 1px;
   font-size: 1.3em;
+  color: transparent;
+  cursor: default;
+}
+
+.mat-form-field .mat-form-field-suffix .mat-icon {
+  display: none;
+}
+
+.filter-field__icon-suffix--visible {
   color: var(--gray);
+  cursor: default;
+  cursor: pointer;
 }
 
 .expand-wrapper {
