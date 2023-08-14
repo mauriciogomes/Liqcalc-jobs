@@ -23,7 +23,6 @@ registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
-    
     // MoedaBrPipe,
     // DecimalBrPipe
   ],

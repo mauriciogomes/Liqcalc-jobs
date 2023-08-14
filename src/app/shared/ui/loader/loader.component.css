@@ -1,0 +1,57 @@
+.loader {
+  position: relative;
+  width: 144px;
+  height: 20px;
+  margin: 3px auto;
+}
+
+@keyframes lightup {
+  0% {
+    background-color: var(--light-gray);
+  }
+  45% {
+    background-color: hsl(var(--primary-hue), 50%, 70%);
+  }
+  50% {
+    background-color: hsl(var(--secondary-hue), 50%, 70%);
+  }
+  100% {
+    background-color: var(--light-gray);
+  }
+}
+
+.triangle {
+  position: absolute;
+  transform: rotate(90deg);
+  bottom: 0;
+  height: 20px;
+  width: 25px;
+  background-color: var(--light-gray);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: lightup 2s infinite;
+}
+
+.triangle-1 {
+  left: 0px;
+  animation-delay: 0ms;
+}
+
+.triangle-2 {
+  left: 30px;
+  animation-delay: 200ms;
+}
+
+.triangle-3 {
+  left: 60px;
+  animation-delay: 400ms;
+}
+
+.triangle-4 {
+  left: 90px;
+  animation-delay: 600ms;
+}
+
+.triangle-5 {
+  left: 120px;
+  animation-delay: 800ms;
+}

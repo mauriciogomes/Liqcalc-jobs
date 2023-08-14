@@ -49,6 +49,8 @@ body{
 	--primary-light: hsl(var(--primary-hue), 100%, 70%);
 	--primary-brighter: hsl(var(--primary-hue), 35%, 90%);
 	--secondary-light: hsl(var(--secondary-hue), 70%, 70%);
+	--secondary-brighter: hsl(var(--secondary-hue), 70%, 90%);
+	--secondary-dark: hsl(var(--secondary-hue), 50%, 15%);
 
 	--dark-gray: #333333;
 	--gray: rgb(82, 82, 82);

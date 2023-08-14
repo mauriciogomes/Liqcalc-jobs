@@ -11,6 +11,7 @@ import { OpportunityDetailComponent } from '../opportunity-detail/opportunity-de
 import { ComingSoonModule } from 'src/app/shared/ui/coming-soon/coming-soon.module';
 import { OpportunityCreationComponent } from '../opportunity-creation/opportunity-creation.component';
 import { OpportunityCardComponent } from '../../ui/opportunity-card/opportunity-card.component';
+import { LoaderModule } from 'src/app/shared/ui/loader/loader.module';
 
 // External Libs
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -32,6 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     OpportunitiesShellRoutingModule,
     ComingSoonModule,
+    LoaderModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
