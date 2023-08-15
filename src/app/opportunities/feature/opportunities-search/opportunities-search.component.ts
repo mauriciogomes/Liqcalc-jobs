@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { OpportunityContract } from 'src/app/shared/opportunity-contract.enum';
 import { OpportunityLevel } from 'src/app/shared/opportunity-level.enum';
 import { OpportunityRegime } from 'src/app/shared/opportunity-regime.enum';
@@ -106,7 +108,9 @@ export class OpportunitiesSearchComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -121,5 +125,11 @@ export class OpportunitiesSearchComponent implements OnInit {
 
   collapseFilters() {
     this.isFilterExpanded = false;
+  }
+
+  handleClickCard(opportunity: Opportunity) {
+    const id = opportunity._id;
+    // this.router.navigate(['opportunities', 'detail', id]);
+    this.router.navigate(['opportunities', 'detail']);
   }
 }

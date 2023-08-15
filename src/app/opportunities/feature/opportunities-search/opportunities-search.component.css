@@ -33,6 +33,12 @@ fieldset {
   padding-right: 0;
   margin-left: 0;
   margin-right: 0;
+  height: 54px;
+  transition: height 0.3s;
+}
+
+.fieldset--expanded {
+  height: 340px;
 }
 
 .filter-field {
@@ -144,12 +150,14 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+  }
+
+  .fieldset--expanded {
+    height: 198px;
   }
 
   .keyword-field {
     width: 100%;
-    
   }
 
   .level-field {
