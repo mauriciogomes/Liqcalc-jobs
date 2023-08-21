@@ -6,7 +6,7 @@
 
       <div class="filters">
         <form #searchForm="ngForm">
-          <fieldset [class.fieldset--expanded]="isFilterExpanded">
+          <fieldset [class.fieldset--expanded]="isFilterExpanded && isMobileClient">
             <mat-form-field appearance="outline" class="filter-field keyword-field">
               <mat-label>{{searchFields.keyword.label}}</mat-label>
               <input
@@ -30,7 +30,7 @@
 
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field level-field" *ngIf="isFilterExpanded">
+            <mat-form-field appearance="outline" class="filter-field level-field" *ngIf="isFilterExpanded || !isMobileClient">
               <mat-label>{{searchFields.level.label}}</mat-label>
               <mat-select
                 multiple
@@ -46,7 +46,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field contract-field" *ngIf="isFilterExpanded">
+            <mat-form-field appearance="outline" class="filter-field contract-field" *ngIf="isFilterExpanded || !isMobileClient">
               <mat-label>{{searchFields.contract.label}}</mat-label>
               <mat-select
                 multiple
@@ -62,7 +62,7 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="filter-field regime-field" *ngIf="isFilterExpanded">
+            <mat-form-field appearance="outline" class="filter-field regime-field" *ngIf="isFilterExpanded || !isMobileClient">
               <mat-label>{{searchFields.regime.label}}</mat-label>
               <mat-select
                 multiple
@@ -78,7 +78,7 @@
               </mat-select>
             </mat-form-field>
   
-            <mat-form-field appearance="outline" class="filter-field salary-field" *ngIf="isFilterExpanded">
+            <mat-form-field appearance="outline" class="filter-field salary-field" *ngIf="isFilterExpanded || !isMobileClient">
               <mat-label>{{searchFields.salaryRange.label}}</mat-label>
               <mat-select multiple name="salaryRange" [(ngModel)]="searchFields.salaryRange.value">
                 <mat-option

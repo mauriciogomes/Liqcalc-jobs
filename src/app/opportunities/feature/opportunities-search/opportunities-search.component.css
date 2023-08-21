@@ -192,6 +192,7 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: 126px;
   }
 
   .keyword-field {
@@ -227,6 +228,7 @@ fieldset {
 @media screen and (min-width: 1024px) {
   fieldset {
     display: block;
+    height: 54px;
   }
 
   .filter-field {

@@ -15,9 +15,10 @@ import { Opportunity } from 'src/app/shared/opportunity.model';
 })
 export class OpportunitiesSearchComponent implements OnInit {
 
+  isMobileClient: boolean;
   isLoading: boolean = false;
   isFilterExpanded: boolean = false;
-  
+
   searchFields = {
     "keyword": {
       label: "Título da vaga",
@@ -108,11 +109,30 @@ export class OpportunitiesSearchComponent implements OnInit {
     }
   ];
 
+
   constructor(
     public router: Router
   ) { }
 
   ngOnInit(): void {
+    this.isMobileClient = this.detectMobileClient();
+  }
+
+  detectMobileClient(): boolean {
+    // Para resolver o problema de exibicao dos campos em telas grandes
+    // foi criada flag que armazena se o client é um mobile com resolucao até 768px
+    // O objetivo é que o modificador css para o fieldset somente seja aplicado
+    // caso o client seja mobile e extiver expandido
+    // TODO: a flag poderá estar disponível em toda a aplicação por meio de um service que manipula o storage
+
+    const minScreenSize = 300;
+    const maxScreenSize = 768;
+
+    if(window.innerWidth > minScreenSize && window.innerWidth < maxScreenSize) {
+      return true;
+    }
+
+    return false;
   }
 
   clearKeywordField() {
